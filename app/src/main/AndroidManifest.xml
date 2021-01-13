@@ -9,8 +9,15 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Faster">
-        <activity android:name=".Authentication.SingUpActivity"></activity>
-        <activity android:name=".Authentication.LogInActivity" />
+        <activity android:name=".Authentication.AccountType"
+            android:theme="@style/Theme.SplashScreen"
+            ></activity>
+        <activity android:name=".Authentication.SingUpActivity"
+            android:theme="@style/Theme.SplashScreen"
+            />
+        <activity android:name=".Authentication.LogInActivity"
+            android:theme="@style/Theme.SplashScreen"
+            />
         <activity
             android:name=".OnBoarding.OnBoardingScreen"
             android:theme="@style/Theme.SplashScreen" />

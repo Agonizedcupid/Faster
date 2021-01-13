@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/purple_700"
+    tools:context=".Authentication.AccountType">
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/toolbarCard"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        app:cardElevation="5dp"
+        app:cardBackgroundColor="@color/purple_700"
+        >
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <ImageView
+                android:id="@+id/backFromTypeSelection"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/back_icon"
+                android:layout_centerVertical="true"
+                android:layout_marginStart="10dp"
+                />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:src="@drawable/small_messahe_icon"
+                />
+
+            <TextView
+                android:id="@+id/logInTextOverTypeSelection"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_alignParentEnd="true"
+                android:layout_marginEnd="10dp"
+                android:text="Login"
+                android:textStyle="normal"
+                android:textColor="@android:color/white"
+                android:textSize="16sp"
+                />
+
+        </RelativeLayout>
+
+    </androidx.cardview.widget.CardView>
+
+    <TextView
+        android:id="@+id/accountTypeText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Choose Account Type"
+        android:layout_gravity="center"
+        android:textSize="20sp"
+        android:layout_marginTop="50dp"
+        android:textColor="@android:color/white"
+        android:textStyle="bold"
+        />
+
+    <TextView
+        android:id="@+id/personalTypeSelectionButton"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:text="Personal"
+        android:textSize="16sp"
+        android:gravity="center"
+        android:background="@drawable/text_box_round"
+        android:layout_gravity="center"
+        android:layout_marginTop="35dp"
+        android:layout_below="@id/toolbarCard"
+        android:layout_marginStart="25dp"
+        android:layout_marginEnd="25dp"
+        android:paddingTop="15dp"
+        android:paddingBottom="15dp"
+        android:textColor="@android:color/white"
+        android:textStyle="normal"
+        />
+
+    <TextView
+        android:id="@+id/businessTypesSelectionButton"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:text="Business"
+        android:textSize="16sp"
+        android:gravity="center"
+        android:background="@drawable/text_box_round"
+        android:layout_gravity="center"
+        android:layout_marginTop="35dp"
+        android:layout_below="@id/toolbarCard"
+        android:layout_marginStart="25dp"
+        android:layout_marginEnd="25dp"
+        android:paddingTop="15dp"
+        android:paddingBottom="15dp"
+        android:textColor="@android:color/white"
+        android:textStyle="normal"
+        />
+
+
+</LinearLayout>

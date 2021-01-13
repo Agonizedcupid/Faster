@@ -10,6 +10,7 @@ import android.preference.PreferenceManager;
 import android.view.Window;
 import android.view.WindowManager;
 
+import com.aariyan.faster.Authentication.AccountType;
 import com.aariyan.faster.Common.Common;
 import com.aariyan.faster.OnBoarding.OnBoardingScreen;
 
@@ -48,7 +49,7 @@ public class SplashActivity extends AppCompatActivity {
                 } else {
                     //if false, that means, Screen already shown
                     //It not show then redirect to the MainActivity:
-                    startActivity(new Intent(SplashActivity.this, MainActivity.class));
+                    startActivity(new Intent(SplashActivity.this, AccountType.class));
                     //startActivity(new Intent(SplashActivity.this, OnBoardingScreen.class));
                     //Removing from the backStack, therefore it will come back :
                 }

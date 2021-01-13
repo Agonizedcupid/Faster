@@ -1,5 +1,6 @@
 package com.aariyan.faster.Adapter;
 
+import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
@@ -15,6 +16,7 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.aariyan.faster.Authentication.AccountType;
 import com.aariyan.faster.Authentication.LogInActivity;
 import com.aariyan.faster.Authentication.SingUpActivity;
 import com.aariyan.faster.Common.Common;
@@ -81,6 +83,22 @@ public class SliderAdapter extends SliderViewAdapter<SliderAdapter.ViewHolder> {
         if (position != list.size() - 1) {
             viewHolder.bottomActionLayout.setVisibility(View.GONE);
         }
+
+        viewHolder.singUpText.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                context.startActivity(new Intent(context, AccountType.class));
+                ((Activity)context).finish();
+            }
+        });
+
+        viewHolder.logInText.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                context.startActivity(new Intent(context,LogInActivity.class));
+                ((Activity)context).finish();
+            }
+        });
 
     }
 
