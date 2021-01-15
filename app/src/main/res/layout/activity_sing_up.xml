@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:background="@color/purple_700"
     android:orientation="vertical"
-    tools:context=".Authentication.SingUpActivity">
+    tools:context=".Authentication.SignUpActivity">
 
     <androidx.cardview.widget.CardView
         android:id="@+id/toolbarCard"
@@ -20,7 +20,7 @@
             android:layout_height="match_parent">
 
             <ImageView
-                android:id="@+id/backFromTypeSelection"
+                android:id="@+id/backFromSignUp"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_centerVertical="true"
@@ -34,7 +34,7 @@
                 android:src="@drawable/small_messahe_icon" />
 
             <TextView
-                android:id="@+id/logInTextOverTypeSelection"
+                android:id="@+id/logInTextOverSignUp"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignParentEnd="true"
@@ -191,6 +191,7 @@
 
 
                 <TextView
+                    android:id="@+id/signUpBtn"
                     android:layout_width="match_parent"
                     android:layout_height="50dp"
                     android:layout_marginTop="25dp"

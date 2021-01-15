@@ -13,4 +13,5 @@
     <color name="on_boarding_inactive_color">#4B545F</color>
 
     <color name="text_box_back">#364555</color>
+    <color name="circular_image_boarder">#707070</color>
 </resources>

@@ -9,7 +9,6 @@ import android.preference.PreferenceManager;
 import android.view.View;
 
 import com.aariyan.faster.Common.Common;
-import com.aariyan.faster.MainActivity;
 import com.aariyan.faster.R;
 
 public class AccountType extends AppCompatActivity {
@@ -48,14 +47,16 @@ public class AccountType extends AppCompatActivity {
         findViewById(R.id.personalTypeSelectionButton).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(AccountType.this,SingUpActivity.class));
+                startActivity(new Intent(AccountType.this, SignUpActivity.class));
+                findViewById(R.id.personalTypeSelectionButton).setBackgroundResource(R.drawable.button_background);
             }
         });
 
         findViewById(R.id.businessTypesSelectionButton).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(AccountType.this,SingUpActivity.class));
+                startActivity(new Intent(AccountType.this, SignUpActivity.class));
+                findViewById(R.id.businessTypesSelectionButton).setBackgroundResource(R.drawable.button_background);
             }
         });
     }
