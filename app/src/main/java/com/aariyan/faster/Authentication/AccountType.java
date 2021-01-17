@@ -8,6 +8,8 @@ import android.os.Bundle;
 import android.preference.PreferenceManager;
 import android.view.View;
 
+import com.aariyan.faster.Authentication.Personal.LogInActivity;
+import com.aariyan.faster.Authentication.Personal.SignUpActivity;
 import com.aariyan.faster.Common.Common;
 import com.aariyan.faster.R;
 
@@ -40,7 +42,7 @@ public class AccountType extends AppCompatActivity {
         findViewById(R.id.logInTextOverTypeSelection).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(AccountType.this,LogInActivity.class));
+                startActivity(new Intent(AccountType.this, LogInActivity.class));
             }
         });
 

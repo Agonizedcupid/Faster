@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:background="@color/purple_700"
     android:orientation="vertical"
-    tools:context=".Authentication.SignUpActivity">
+    tools:context=".Authentication.Personal.SignUpActivity">
 
     <androidx.cardview.widget.CardView
         android:id="@+id/toolbarCard"

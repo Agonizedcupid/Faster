@@ -13,8 +13,8 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 
 import com.aariyan.faster.Authentication.AccountType;
-import com.aariyan.faster.Authentication.LogInActivity;
-import com.aariyan.faster.Authentication.SignUpActivity;
+import com.aariyan.faster.Authentication.Personal.LogInActivity;
+import com.aariyan.faster.Authentication.Personal.SignUpActivity;
 import com.aariyan.faster.MainActivity;
 import com.aariyan.faster.Model.OnBoardingModel;
 import com.aariyan.faster.R;

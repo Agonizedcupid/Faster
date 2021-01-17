@@ -1,4 +1,4 @@
-package com.aariyan.faster.Authentication;
+package com.aariyan.faster.Authentication.Personal;
 
 import androidx.appcompat.app.AppCompatActivity;
 

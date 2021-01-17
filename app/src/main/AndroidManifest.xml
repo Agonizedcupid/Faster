@@ -9,15 +9,15 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Faster">
-        <activity android:name=".Authentication.LogInPasswordActivity"></activity>
+        <activity android:name=".Authentication.Personal.LogInPasswordActivity"></activity>
         <activity
             android:name=".Authentication.AccountType"
             android:theme="@style/Theme.SplashScreen" />
         <activity
-            android:name=".Authentication.SignUpActivity"
+            android:name=".Authentication.Personal.SignUpActivity"
             android:theme="@style/Theme.SplashScreen" />
         <activity
-            android:name=".Authentication.LogInActivity"
+            android:name=".Authentication.Personal.LogInActivity"
             android:theme="@style/Theme.SplashScreen" />
         <activity
             android:name=".OnBoarding.OnBoardingScreen"
