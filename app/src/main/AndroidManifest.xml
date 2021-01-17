@@ -9,7 +9,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Faster">
-        <activity android:name=".Authentication.Personal.LogInPasswordActivity"></activity>
+        <activity android:name=".Authentication.Business.SignUpThirdPart"></activity>
+        <activity android:name=".Authentication.Business.SignUpSecondPart" />
+        <activity android:name=".Authentication.Personal.LogInPasswordActivity" />
         <activity
             android:name=".Authentication.AccountType"
             android:theme="@style/Theme.SplashScreen" />

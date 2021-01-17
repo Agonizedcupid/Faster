@@ -49,16 +49,20 @@ public class AccountType extends AppCompatActivity {
         findViewById(R.id.personalTypeSelectionButton).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(AccountType.this, SignUpActivity.class));
+                startActivity(new Intent(AccountType.this, SignUpActivity.class)
+                                .putExtra("accountType","Personal"));
                 findViewById(R.id.personalTypeSelectionButton).setBackgroundResource(R.drawable.button_background);
+                findViewById(R.id.businessTypesSelectionButton).setBackgroundResource(R.drawable.text_box_round);
             }
         });
 
         findViewById(R.id.businessTypesSelectionButton).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(AccountType.this, SignUpActivity.class));
+                startActivity(new Intent(AccountType.this, SignUpActivity.class)
+                        .putExtra("accountType","Business"));
                 findViewById(R.id.businessTypesSelectionButton).setBackgroundResource(R.drawable.button_background);
+                findViewById(R.id.personalTypeSelectionButton).setBackgroundResource(R.drawable.text_box_round);
             }
         });
     }
