@@ -29,7 +29,7 @@ public class OnBoardingScreen extends AppCompatActivity {
     private String[] descriptions = {"The quick, brown fox jumps over a lazy dog. DJs flock by when MTV ax quiz prog. Junk MTV quiz graced by fox whelps. Bawds jog, flick quartz, vex nymphs. Waltz, bad nymph, for quick jigs ",
             "The quick, brown fox jumps over a lazy dog. DJs flock by when MTV ax quiz prog. Junk MTV quiz graced by fox whelps. Bawds jog, flick quartz, vex nymphs. Waltz, bad nymph, for quick jigs ",
             "The quick, brown fox jumps over a lazy dog. DJs flock by when MTV ax quiz prog. Junk MTV quiz graced by fox whelps. Bawds jog, flick quartz, vex nymphs. Waltz, bad nymph, for quick jigs ",
-            "The quick, brown fox jumps over a lazy dog. DJs flock by when MTV ax quiz prog. Junk MTV quiz graced by fox whelps. Bawds jog, flick quartz, vex nymphs. Waltz, bad nymph, for quick jigs "};
+            "The quick, brown fox jumps over a lazy dog. DJs flock by when MTV ax quiz prog."};
 
     private int[] sliderImages = {R.drawable.one_boarding_one,R.drawable.one_board_two,R.drawable.one_board_three,R.drawable.one_boarding_four};
 

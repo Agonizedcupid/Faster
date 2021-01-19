@@ -6,6 +6,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 
+import com.aariyan.faster.Authentication.AccountType;
 import com.aariyan.faster.MainActivity;
 import com.aariyan.faster.R;
 
@@ -38,7 +39,7 @@ public class LogInPasswordActivity extends AppCompatActivity {
         findViewById(R.id.signUpTextOverLogInPass).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(LogInPasswordActivity.this,SignUpActivity.class));
+                startActivity(new Intent(LogInPasswordActivity.this, AccountType.class));
             }
         });
     }

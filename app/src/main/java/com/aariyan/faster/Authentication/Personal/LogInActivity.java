@@ -6,6 +6,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 
+import com.aariyan.faster.Authentication.AccountType;
 import com.aariyan.faster.R;
 
 public class LogInActivity extends AppCompatActivity {
@@ -30,7 +31,7 @@ public class LogInActivity extends AppCompatActivity {
         findViewById(R.id.signUpTextOverLogInScreen).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(LogInActivity.this, SignUpActivity.class));
+                startActivity(new Intent(LogInActivity.this, AccountType.class));
                 overridePendingTransition(android.R.anim.slide_in_left, android.R.anim.slide_out_right);
             }
         });
