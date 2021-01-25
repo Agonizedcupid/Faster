@@ -41,4 +41,9 @@
         <item name="android:statusBarColor" tools:targetApi="l">?attr/colorPrimaryVariant</item>
     </style>
 
+    <style name="NavigationView" >
+        <item name="android:listDivider">@color/separator</item>
+        <item name="android:textColorSecondary">@color/white</item>
+    </style>
+
 </resources>

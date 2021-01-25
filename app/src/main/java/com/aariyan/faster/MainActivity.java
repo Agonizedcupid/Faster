@@ -1,19 +1,42 @@
 package com.aariyan.faster;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.view.GravityCompat;
+import androidx.drawerlayout.widget.DrawerLayout;
+import androidx.fragment.app.Fragment;
 
+import android.annotation.SuppressLint;
 import android.content.SharedPreferences;
+import android.graphics.Color;
+import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
+import android.view.MenuItem;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.aariyan.faster.Common.Common;
+import com.aariyan.faster.Fragment.ChatFragment;
+import com.aariyan.faster.Fragment.HomeFragment;
+import com.aariyan.faster.Fragment.ListingFragment;
+import com.aariyan.faster.Fragment.OrderFragment;
+import com.aariyan.faster.Fragment.SettingFragment;
+import com.bumptech.glide.Glide;
+import com.google.android.material.navigation.NavigationView;
 
-public class MainActivity extends AppCompatActivity {
+
+import jp.wasabeef.blurry.Blurry;
+
+import static com.bumptech.glide.request.RequestOptions.bitmapTransform;
+import static java.security.AccessController.getContext;
+
+public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
 
     //main layout, containing first Mode menu:
     private RelativeLayout modeLayout;
@@ -23,7 +46,7 @@ public class MainActivity extends AppCompatActivity {
     private ImageView collapseExpandedModeMenu;
     //Selected Particular menu on top right:
     //it will show the selected menu on the top:
-    private RelativeLayout personalModeLayout,driverModeLayout,selectedModeMenuLayout;
+    private RelativeLayout personalModeLayout, driverModeLayout, selectedModeMenuLayout;
     //show as selected menu icon:
     private ImageView selectedMenuIcon;
     //To Invisible the text
@@ -33,27 +56,25 @@ public class MainActivity extends AppCompatActivity {
     private ImageView expandParentMenu;
     //to go back in parent menu by closing Current menu:
     private ImageView closeSelectedMenu;
-    //Main menu selected:
-    private LinearLayout mainMenuSelectedLayout;
-    //to expand the main menu parent:
-    private ImageView expandMainMenu;
-    // to close the selected main menu:
-    private ImageView selectedMainMenuIcon;
-    // to close and revert to it's parent menu:
-    private ImageView closeCurrentMainMenu;
-    //Main menu list container:
-    private LinearLayout mainMenuList;
-    //list of main menu container:
-    private LinearLayout onlineMainMenu,shopMainMenu,driverMainMenu;
+
+
 
     // to identify the users selection menu name:
     private String menuIdentifier = "";
+
+    //Navigation drawer:
+    private NavigationView navigationView;
+    // toggle button to open the navigation drawer
+    private ImageView toggleBtn;
+    //Layout to show the navigation menu
+    private DrawerLayout drawerLayout;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        //check to see whether the OnBoard screen has already been showed or not:
         SharedPreferences.Editor sharedPreferencesEditor =
                 PreferenceManager.getDefaultSharedPreferences(MainActivity.this).edit();
         sharedPreferencesEditor.putBoolean(
@@ -61,6 +82,22 @@ public class MainActivity extends AppCompatActivity {
         sharedPreferencesEditor.apply();
 
         initUI();
+    }
+
+    //when go to the back:
+    @Override
+    public void onBackPressed() {
+
+        //check whether the drawer already open or not:
+        //If, already open, then close it first:
+        if (drawerLayout.isDrawerOpen(GravityCompat.START)) {
+            //closing the drawer first then fo back:
+            drawerLayout.closeDrawer(GravityCompat.START);
+        } else {
+            //opposite condition:
+            super.onBackPressed();
+
+        }
     }
 
     private void initUI() {
@@ -89,24 +126,34 @@ public class MainActivity extends AppCompatActivity {
         expandParentMenu = findViewById(R.id.expandModeParentMenu);
         //ImageView to undo selection:
         closeSelectedMenu = findViewById(R.id.closeSelectedMenu);
-        //instantiate where the selected will be:
-        mainMenuSelectedLayout = findViewById(R.id.selectedMainMenuLayout);
-        //when need to expand the main menu:
-        expandMainMenu = findViewById(R.id.expandMainMenu);
-        //selected menu icon will be shown there:
-        selectedMainMenuIcon = findViewById(R.id.selectedMainMenuIcon);
-        //clickable to going revert:
-        closeCurrentMainMenu = findViewById(R.id.closeSelectedMainMenu);
-        //Main menu list:
-        mainMenuList = findViewById(R.id.mainMenuList);
-        //main menus:
-        // Shop main menu:
-        shopMainMenu = findViewById(R.id.shopMainMenu);
-        //driver main menu:
-        driverMainMenu = findViewById(R.id.driverMainMenu);
-        //online main menu:
-        onlineMainMenu = findViewById(R.id.onlineMainMenu);
 
+
+
+        //drawer left containing the navigation menus:
+        drawerLayout = findViewById(R.id.drawerLayout);
+
+        //Navigation drawer:
+        navigationView = findViewById(R.id.navigationDrawer);
+        // instantiate for onClick event
+        navigationView.setNavigationItemSelectedListener(MainActivity.this);
+        //set the default fragment for the first time:
+        openNavigationMenu(new HomeFragment());
+        //getSupportFragmentManager().beginTransaction().replace(R.id.fragmentContainer, new HomeFragment()).commit();
+        //Marked the menu as clicked:
+        navigationView.setCheckedItem(R.id.home_menu);
+        //toggle button to open the drawer by click:
+        toggleBtn = findViewById(R.id.drawerOpenerBtn);
+        //action event to open the navigation drawer:
+        //although it will open automatically by dragging left to right or start to end:
+        toggleBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                //opening the drawer layout from the start or left:
+                // no need anything for closing the drawer layout:
+                // will be close automatically by touch on the screen
+                drawerLayout.openDrawer(GravityCompat.START);
+            }
+        });
 
 
         //OnAction Event for all the layout:
@@ -165,72 +212,10 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        //Main menu section:
-        //when need to expand the main menu:
-        expandMainMenu.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                //expand the parent layout:
-                //Hide the current layout:
-                mainMenuExpand();
-
-            }
-        });
-
-        //restore the current position and going back & show the parent Menu:
-        closeCurrentMainMenu.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                mainMenuExpand();
-            }
-        });
-
-        // To select the shop menu
-        shopMainMenu.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                mainMenuSelection("Shop");
-            }
-        });
-
-        //To select the Drive menu:
-        driverMainMenu.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                mainMenuSelection("Driver");
-            }
-        });
-        //to select the wifi menu:
-        onlineMainMenu.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                mainMenuSelection("Online");
-            }
-        });
-
-    }
 
 
-    //Main Menu section:
-    //to expand the main menu:
-    private void mainMenuExpand() {
-        mainMenuSelectedLayout.setVisibility(View.GONE);
-        mainMenuList.setVisibility(View.VISIBLE);
-    }
 
-    //Main menu selection:
-    private void mainMenuSelection(String mainMenuIdentifier){
-       mainMenuList.setVisibility(View.GONE);
-       mainMenuSelectedLayout.setVisibility(View.VISIBLE);
-       if (mainMenuIdentifier.equals("Shop")) {
-           selectedMainMenuIcon.setImageResource(R.drawable.shop_icon);
-       }
-       if (mainMenuIdentifier.equals("Driver")) {
-           selectedMainMenuIcon.setImageResource(R.drawable.car_icon);
-       }
-       if (mainMenuIdentifier.equals("Online")) {
-           selectedMainMenuIcon.setImageResource(R.drawable.wifi_icon);
-       }
+
     }
 
 
@@ -247,6 +232,7 @@ public class MainActivity extends AppCompatActivity {
         //hide the selected menu layout to show the menu list:
         selectedModeMenuLayout.setVisibility(View.GONE);
     }
+
     //to collapse the menu:
     //it will triggers:
     private void collapseModeMenu() {
@@ -281,10 +267,46 @@ public class MainActivity extends AppCompatActivity {
             selectedMenuIcon.setImageResource(R.drawable.car_icon);
         }
     }
+
     //when needs to restore to it's previous position:
-    private void closeCurrentMenu () {
+    private void closeCurrentMenu() {
         //just collapse all the menu, it will show the parent menu:
         collapseModeMenu();
     }
 
+
+    // perform for opening the corresponding menu into the fragment:
+    @Override
+    public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+        switch (item.getItemId()) {
+            case R.id.home_menu:
+                openNavigationMenu(new HomeFragment());
+                break;
+
+            case R.id.listingMenu:
+                openNavigationMenu(new ListingFragment());
+                break;
+
+            case R.id.chatMenu:
+                openNavigationMenu(new ChatFragment());
+                break;
+
+            case R.id.orderMenu:
+                openNavigationMenu(new OrderFragment());
+                break;
+
+            case R.id.settingMenu:
+                openNavigationMenu(new SettingFragment());
+                break;
+
+
+        }
+
+        drawerLayout.closeDrawer(GravityCompat.START);
+        return true;
+    }
+
+    private void openNavigationMenu(Fragment fragment) {
+        getSupportFragmentManager().beginTransaction().replace(R.id.fragmentContainer, fragment).commit();
+    }
 }

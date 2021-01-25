@@ -2,32 +2,60 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
-    <item
-        android:title="Home"
-        android:id="@+id/homeMenu"
-        android:icon="@drawable/home_menu_icon"
-        />
+    <group
+        android:id="@+id/homeGroup"
 
-    <item
-        android:title="Create a listing"
-        android:id="@+id/listingMenu"
-        android:icon="@drawable/list_navigation_menu"
-        />
+        >
+        <item
+            android:title="Home"
+            android:id="@+id/home_menu"
+            app:showAsAction="never"
+            android:icon="@drawable/home_menu_icon"
+            />
+    </group>
 
-    <item
-        android:title="Chat"
-        android:id="@+id/chatMenu"
-        android:icon="@drawable/chat_navigation_menu"
-        />
-    <item
-        android:title="Order"
-        android:id="@+id/orderMenu"
-        android:icon="@drawable/order_navigation_menu"
-        />
+    <group
+        android:id="@+id/listingGroup"
 
-    <item
-        android:title="Setting"
-        android:id="@+id/settingMenu"
-        android:icon="@drawable/setting"
-        />
+        >
+        <item
+            android:title="Create a listing"
+            android:id="@+id/listingMenu"
+            android:icon="@drawable/list_navigation_menu"
+            />
+    </group>
+
+    <group
+        android:id="@+id/chatGroup"
+
+        >
+        <item
+            android:title="Chat"
+            android:id="@+id/chatMenu"
+            android:icon="@drawable/chat_navigation_menu"
+            />
+    </group>
+
+    <group
+        android:id="@+id/orderGroup"
+
+        >
+        <item
+            android:title="Order"
+            android:id="@+id/orderMenu"
+            android:icon="@drawable/order_navigation_menu"
+            />
+    </group>
+
+    <group
+        android:id="@+id/settingGroup"
+
+        >
+        <item
+            android:title="Setting"
+            android:id="@+id/settingMenu"
+            android:icon="@drawable/setting"
+            />
+    </group>
+
 </menu>
