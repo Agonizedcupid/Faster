@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item
+        android:title="Home"
+        android:id="@+id/homeMenu"
+        android:icon="@drawable/home_menu_icon"
+        />
+
+    <item
+        android:title="Create a listing"
+        android:id="@+id/listingMenu"
+        android:icon="@drawable/list_navigation_menu"
+        />
+
+    <item
+        android:title="Chat"
+        android:id="@+id/chatMenu"
+        android:icon="@drawable/chat_navigation_menu"
+        />
+    <item
+        android:title="Order"
+        android:id="@+id/orderMenu"
+        android:icon="@drawable/order_navigation_menu"
+        />
+
+    <item
+        android:title="Setting"
+        android:id="@+id/settingMenu"
+        android:icon="@drawable/setting"
+        />
+</menu>

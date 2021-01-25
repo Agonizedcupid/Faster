@@ -7,6 +7,8 @@
     android:background="@color/purple_700"
     tools:context=".MainActivity">
 
+
+    <!--Top toolbar layout-->
     <LinearLayout
         android:id="@+id/toolbarCard"
         android:layout_width="match_parent"
@@ -66,6 +68,7 @@
             </RelativeLayout>
 
 
+            <!--Top right corner menu-->
             <RelativeLayout
                 android:layout_width="50dp"
                 android:layout_height="wrap_content"
@@ -74,40 +77,83 @@
                 android:layout_marginEnd="10dp">
 
                 <RelativeLayout
-                    android:id="@+id/modeLayout"
-                    android:layout_width="50dp"
-                    android:layout_height="50dp"
-                    android:layout_marginTop="10dp"
-                    android:background="@drawable/circle_with_shite_border">
+                    android:id="@+id/modeMenuContainer"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
 
-                    <TextView
-                        android:id="@+id/modeBtn"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_centerInParent="true"
-                        android:text="Mode"
-                        android:textColor="@android:color/white"
-                        android:textSize="14sp"
-                        android:textStyle="normal" />
 
+                    <RelativeLayout
+                        android:id="@+id/modeLayout"
+                        android:layout_width="50dp"
+                        android:layout_height="50dp"
+                        android:layout_marginTop="10dp"
+                        android:background="@drawable/circle_with_shite_border"
+
+                        >
+
+                        <TextView
+                            android:id="@+id/modeText"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerInParent="true"
+                            android:text="Mode"
+                            android:textColor="@android:color/white"
+                            android:textSize="14sp"
+                            android:textStyle="normal" />
+
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:visibility="gone"
+                        android:id="@+id/selectedModeMenuLayout"
+                        android:layout_width="60dp"
+                        android:layout_height="60dp"
+                        android:layout_marginTop="10dp">
+
+
+                        <ImageView
+                            android:layout_width="45dp"
+                            android:layout_height="45dp"
+                            android:layout_centerInParent="true"
+                            android:src="@drawable/circle_with_green_color" />
+
+                        <ImageView
+                            android:id="@+id/selectedMenuIcon"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerInParent="true"
+                            android:src="@drawable/shop_icon" />
+
+                        <ImageView
+                            android:id="@+id/closeSelectedMenu"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentEnd="true"
+                            android:layout_alignParentBottom="true"
+                            android:layout_marginEnd="5dp"
+                            android:layout_marginBottom="5dp"
+                            android:src="@drawable/close_icon" />
+
+                    </RelativeLayout>
                 </RelativeLayout>
 
-
                 <ImageView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_below="@id/modeLayout"
+                    android:id="@+id/expandModeParentMenu"
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:layout_below="@id/modeMenuContainer"
                     android:layout_centerHorizontal="true"
                     android:layout_marginTop="10dp"
                     android:src="@drawable/below_arrow_icon" />
 
             </RelativeLayout>
+            <!--Top right corner menu end-->
 
 
         </RelativeLayout>
 
     </LinearLayout>
-
+    <!--Top toolbar layout end-->
 
     <!--Center Image-->
     <ScrollView
@@ -140,14 +186,16 @@
 
                 <!--Left side menu-->
                 <LinearLayout
+                    android:id="@+id/mainMenuList"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_centerVertical="true"
                     android:layout_marginStart="75dp"
                     android:orientation="vertical"
-               >
+                    >
 
                     <LinearLayout
+                        android:id="@+id/shopMainMenu"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center"
@@ -173,6 +221,7 @@
                     </LinearLayout>
 
                     <LinearLayout
+                        android:id="@+id/driverMainMenu"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center"
@@ -199,6 +248,7 @@
                     </LinearLayout>
 
                     <LinearLayout
+                        android:id="@+id/onlineMainMenu"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center"
@@ -225,15 +275,17 @@
                     </LinearLayout>
 
                 </LinearLayout>
+                <!--Left side menu end-->
 
                 <!--Left side Active menu-->
                 <LinearLayout
-                    android:visibility="gone"
+                    android:id="@+id/selectedMainMenuLayout"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="75dp"
                     android:layout_centerVertical="true"
+                    android:layout_marginStart="75dp"
                     android:gravity="center"
+                    android:visibility="gone"
                     android:orientation="vertical">
 
                     <RelativeLayout
@@ -249,28 +301,33 @@
                             android:src="@drawable/circle_with_green_color" />
 
                         <ImageView
+                            android:id="@+id/selectedMainMenuIcon"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_centerInParent="true"
                             android:src="@drawable/shop_icon" />
 
                         <ImageView
+                            android:id="@+id/closeSelectedMainMenu"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_alignParentEnd="true"
                             android:layout_alignParentBottom="true"
-                            android:layout_marginBottom="5dp"
                             android:layout_marginEnd="5dp"
+                            android:layout_marginBottom="5dp"
                             android:src="@drawable/close_icon" />
 
 
                     </RelativeLayout>
 
                     <ImageView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
+                        android:id="@+id/expandMainMenu"
+                        android:layout_width="25dp"
+                        android:layout_height="25dp"
+                        android:layout_marginStart="-3dp"
                         android:src="@drawable/below_arrow_icon" />
                 </LinearLayout>
+                <!--Left side Active menu End-->
 
             </RelativeLayout>
 
@@ -304,6 +361,7 @@
         <!--First Menu-->
 
         <RelativeLayout
+            android:id="@+id/personalLayoutModeMenu"
             android:layout_width="wrap_content"
             android:layout_height="85dp"
             android:layout_marginTop="10dp">
@@ -338,6 +396,7 @@
 
         <!--Second Menu-->
         <RelativeLayout
+            android:id="@+id/driverLayoutModeMenu"
             android:layout_width="wrap_content"
             android:layout_height="85dp"
             android:layout_marginTop="15dp">
@@ -373,8 +432,8 @@
 
         <ImageView
             android:id="@+id/collapseExpandedModeMenu"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
             android:layout_centerHorizontal="true"
             android:layout_gravity="center"
             android:layout_marginTop="20dp"
@@ -382,6 +441,18 @@
 
     </LinearLayout>
     <!--Mode Menu End-->
+
+    <com.google.android.material.navigation.NavigationView
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:background="#B2808080"
+        app:menu="@menu/navigation_drawer_menu"
+        app:itemIconTint="@android:color/white"
+        app:itemTextColor="@android:color/white"
+        app:headerLayout="@layout/header_navigation_drawer"
+        >
+
+    </com.google.android.material.navigation.NavigationView>
 
 
 </RelativeLayout>

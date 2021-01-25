@@ -44,16 +44,16 @@ public class SplashActivity extends AppCompatActivity {
                 if (!sharedPreferences.getBoolean(Common.onBoardingCompletedStatus, false)) {
 
                     //First time showing the Screen to the user:
-                    startActivity(new Intent(SplashActivity.this, OnBoardingScreen.class));
+                  //  startActivity(new Intent(SplashActivity.this, OnBoardingScreen.class));
                     //Removing from the backStack, therefore it will come back :
                 } else {
                     //if false, that means, Screen already shown
                     //It not show then redirect to the MainActivity:
-                    startActivity(new Intent(SplashActivity.this, AccountType.class));
+                   // startActivity(new Intent(SplashActivity.this, AccountType.class));
                     //Removing from the backStack, therefore it will come back :
                 }
 
-                //startActivity(new Intent(SplashActivity.this, MainActivity.class));
+                startActivity(new Intent(SplashActivity.this, MainActivity.class));
                 finish();
 
             }
