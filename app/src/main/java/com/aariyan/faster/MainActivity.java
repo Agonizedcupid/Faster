@@ -22,6 +22,7 @@ import com.aariyan.faster.Fragment.ChatFragment;
 import com.aariyan.faster.Fragment.HomeFragment;
 import com.aariyan.faster.Fragment.OrderFragment;
 import com.aariyan.faster.Fragment.SettingFragment;
+import com.aariyan.faster.NavigationActivity.ChatActivity;
 import com.aariyan.faster.NavigationActivity.ListingActivity;
 import com.aariyan.faster.NavigationActivity.SettingActivity;
 import com.google.android.material.navigation.NavigationView;
@@ -280,7 +281,10 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                 break;
 
             case R.id.chatMenu:
-                openNavigationMenu(new ChatFragment());
+                //openNavigationMenu(new ChatFragment());
+
+                startActivity(new Intent(MainActivity.this, ChatActivity.class));
+                overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out);
                 break;
 
             case R.id.orderMenu:
