@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
     android:background="@color/purple_700"
-    tools:context=".Fragment.ListingFragment">
+    android:layout_height="match_parent"
+    tools:context=".NavigationActivity.ListingActivity">
 
 
     <!--Top toolbar layout-->
@@ -20,6 +21,7 @@
 
 
             <ImageView
+                android:id="@+id/backFromNewListing"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_centerVertical="true"
@@ -73,85 +75,85 @@
             android:layout_height="wrap_content"
             android:orientation="vertical">
 
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="Add a title"
-                            android:textSize="24sp"
-                            android:textStyle="bold"
-                            android:textColor="@color/white"
-                            android:layout_marginBottom="15dp"
-                            />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Add a title"
+                android:textSize="24sp"
+                android:textStyle="bold"
+                android:textColor="@color/white"
+                android:layout_marginBottom="15dp"
+                />
 
-                        <EditText
-                            android:layout_width="match_parent"
-                            android:layout_height="50dp"
-                            android:background="@drawable/listing_background"
-                            android:hint="Product Name"
-                            android:paddingStart="10dp"
-                            android:textColorHint="#B6B5B5"
-                            android:textColor="@color/white"
-                            />
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:background="@drawable/listing_background"
+                android:hint="Product Name"
+                android:paddingStart="10dp"
+                android:textColorHint="#B6B5B5"
+                android:textColor="@color/white"
+                />
 
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="Item information"
-                            android:textSize="24sp"
-                            android:textStyle="bold"
-                            android:textColor="@color/white"
-                            android:layout_marginTop="25dp"
-                            />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Item information"
+                android:textSize="24sp"
+                android:textStyle="bold"
+                android:textColor="@color/white"
+                android:layout_marginTop="25dp"
+                />
 
-                        <TextView
-                            android:layout_width="match_parent"
-                            android:layout_height="50dp"
-                            android:background="@drawable/listing_background"
-                            android:hint="Choose a Category"
-                            android:paddingStart="10dp"
-                            android:textColorHint="#B6B5B5"
-                            android:layout_gravity="center_vertical"
-                            android:gravity="center_vertical"
-                            android:textColor="@color/white"
-                            android:layout_marginTop="15dp"
-                            android:drawableEnd="@drawable/both_indicator"
-                            android:drawableTint="#68727C"
-                            android:paddingEnd="10dp"
-                            />
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:background="@drawable/listing_background"
+                android:hint="Choose a Category"
+                android:paddingStart="10dp"
+                android:textColorHint="#B6B5B5"
+                android:layout_gravity="center_vertical"
+                android:gravity="center_vertical"
+                android:textColor="@color/white"
+                android:layout_marginTop="15dp"
+                android:drawableEnd="@drawable/both_indicator"
+                android:drawableTint="#68727C"
+                android:paddingEnd="10dp"
+                />
 
-                        <EditText
-                            android:layout_width="match_parent"
-                            android:layout_height="50dp"
-                            android:background="@drawable/listing_background"
-                            android:hint="Enter subcategory"
-                            android:paddingStart="10dp"
-                            android:layout_marginTop="20dp"
-                            android:textColorHint="#B6B5B5"
-                            android:textColor="@color/white"
-                            />
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:background="@drawable/listing_background"
+                android:hint="Enter subcategory"
+                android:paddingStart="10dp"
+                android:layout_marginTop="20dp"
+                android:textColorHint="#B6B5B5"
+                android:textColor="@color/white"
+                />
 
-                        <EditText
-                            android:layout_width="match_parent"
-                            android:layout_height="50dp"
-                            android:background="@drawable/listing_background"
-                            android:hint="Items"
-                            android:paddingStart="10dp"
-                            android:layout_marginTop="20dp"
-                            android:textColorHint="#B6B5B5"
-                            android:textColor="@color/white"
-                            />
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:background="@drawable/listing_background"
+                android:hint="Items"
+                android:paddingStart="10dp"
+                android:layout_marginTop="20dp"
+                android:textColorHint="#B6B5B5"
+                android:textColor="@color/white"
+                />
 
-                        <EditText
-                            android:layout_width="match_parent"
-                            android:layout_height="50dp"
-                            android:background="@drawable/listing_background"
-                            android:hint="Quantity"
-                            android:paddingStart="10dp"
-                            android:layout_marginTop="20dp"
-                            android:inputType="number"
-                            android:textColorHint="#B6B5B5"
-                            android:textColor="@color/white"
-                            />
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:background="@drawable/listing_background"
+                android:hint="Quantity"
+                android:paddingStart="10dp"
+                android:layout_marginTop="20dp"
+                android:inputType="number"
+                android:textColorHint="#B6B5B5"
+                android:textColor="@color/white"
+                />
 
             <EditText
                 android:layout_width="match_parent"
@@ -322,6 +324,5 @@
         </LinearLayout>
 
     </ScrollView>
-
 
 </RelativeLayout>

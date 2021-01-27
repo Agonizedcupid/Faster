@@ -9,7 +9,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Faster">
-        <activity android:name=".Authentication.Business.SignUpThirdPart"></activity>
+        <activity android:name=".NavigationActivity.SettingActivity"></activity>
+        <activity android:name=".NavigationActivity.ListingActivity" />
+        <activity android:name=".Authentication.Business.SignUpThirdPart" />
         <activity android:name=".Authentication.Business.SignUpSecondPart" />
         <activity android:name=".Authentication.Personal.LogInPasswordActivity" />
         <activity

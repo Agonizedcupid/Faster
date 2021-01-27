@@ -6,35 +6,25 @@ import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.fragment.app.Fragment;
 
-import android.annotation.SuppressLint;
+import android.content.Intent;
 import android.content.SharedPreferences;
-import android.graphics.Color;
-import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
 import android.view.MenuItem;
 import android.view.View;
-import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.aariyan.faster.Common.Common;
 import com.aariyan.faster.Fragment.ChatFragment;
 import com.aariyan.faster.Fragment.HomeFragment;
-import com.aariyan.faster.Fragment.ListingFragment;
 import com.aariyan.faster.Fragment.OrderFragment;
 import com.aariyan.faster.Fragment.SettingFragment;
-import com.bumptech.glide.Glide;
+import com.aariyan.faster.NavigationActivity.ListingActivity;
+import com.aariyan.faster.NavigationActivity.SettingActivity;
 import com.google.android.material.navigation.NavigationView;
-
-
-import jp.wasabeef.blurry.Blurry;
-
-import static com.bumptech.glide.request.RequestOptions.bitmapTransform;
-import static java.security.AccessController.getContext;
 
 public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
 
@@ -284,7 +274,9 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                 break;
 
             case R.id.listingMenu:
-                openNavigationMenu(new ListingFragment());
+                //openNavigationMenu(new ListingFragment());
+                startActivity(new Intent(MainActivity.this, ListingActivity.class));
+                overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out);
                 break;
 
             case R.id.chatMenu:
@@ -296,7 +288,9 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                 break;
 
             case R.id.settingMenu:
-                openNavigationMenu(new SettingFragment());
+                //openNavigationMenu(new SettingFragment());
+                startActivity(new Intent(MainActivity.this, SettingActivity.class));
+                overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out);
                 break;
 
 
