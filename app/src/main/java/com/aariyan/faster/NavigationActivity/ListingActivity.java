@@ -18,11 +18,6 @@ public class ListingActivity extends AppCompatActivity {
     }
 
     private void initUI() {
-        findViewById(R.id.backFromNewListing).setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                onBackPressed();
-            }
-        });
+
     }
 }

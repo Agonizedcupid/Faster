@@ -17,14 +17,6 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="10dp">
-
-
-            <ImageView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_centerVertical="true"
-                android:src="@drawable/back_icon" />
-
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -73,85 +65,90 @@
             android:layout_height="wrap_content"
             android:orientation="vertical">
 
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="Add a title"
-                            android:textSize="24sp"
-                            android:textStyle="bold"
-                            android:textColor="@color/white"
-                            android:layout_marginBottom="15dp"
-                            />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Add a title"
+                android:textSize="24sp"
+                android:textStyle="bold"
+                android:textColor="@color/white"
+                android:layout_marginBottom="15dp"
+                />
 
-                        <EditText
-                            android:layout_width="match_parent"
-                            android:layout_height="50dp"
-                            android:background="@drawable/listing_background"
-                            android:hint="Product Name"
-                            android:paddingStart="10dp"
-                            android:textColorHint="#B6B5B5"
-                            android:textColor="@color/white"
-                            />
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:background="@drawable/listing_background"
+                android:hint="Product Name"
+                android:paddingStart="10dp"
+                android:textColorHint="#B6B5B5"
+                android:textSize="16sp"
+                android:textColor="@color/white"
+                />
 
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="Item information"
-                            android:textSize="24sp"
-                            android:textStyle="bold"
-                            android:textColor="@color/white"
-                            android:layout_marginTop="25dp"
-                            />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Item information"
+                android:textSize="24sp"
+                android:textStyle="bold"
+                android:textColor="@color/white"
+                android:layout_marginTop="25dp"
+                />
 
-                        <TextView
-                            android:layout_width="match_parent"
-                            android:layout_height="50dp"
-                            android:background="@drawable/listing_background"
-                            android:hint="Choose a Category"
-                            android:paddingStart="10dp"
-                            android:textColorHint="#B6B5B5"
-                            android:layout_gravity="center_vertical"
-                            android:gravity="center_vertical"
-                            android:textColor="@color/white"
-                            android:layout_marginTop="15dp"
-                            android:drawableEnd="@drawable/both_indicator"
-                            android:drawableTint="#68727C"
-                            android:paddingEnd="10dp"
-                            />
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:background="@drawable/listing_background"
+                android:hint="Choose a Category"
+                android:paddingStart="10dp"
+                android:textColorHint="#B6B5B5"
+                android:layout_gravity="center_vertical"
+                android:gravity="center_vertical"
+                android:textColor="@color/white"
+                android:layout_marginTop="15dp"
+                android:textSize="16sp"
+                android:drawableEnd="@drawable/both_indicator"
+                android:drawableTint="#68727C"
+                android:paddingEnd="10dp"
+                />
 
-                        <EditText
-                            android:layout_width="match_parent"
-                            android:layout_height="50dp"
-                            android:background="@drawable/listing_background"
-                            android:hint="Enter subcategory"
-                            android:paddingStart="10dp"
-                            android:layout_marginTop="20dp"
-                            android:textColorHint="#B6B5B5"
-                            android:textColor="@color/white"
-                            />
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:background="@drawable/listing_background"
+                android:hint="Enter Subcategory"
+                android:paddingStart="10dp"
+                android:layout_marginTop="20dp"
+                android:textSize="16sp"
+                android:textColorHint="#B6B5B5"
+                android:textColor="@color/white"
+                />
 
-                        <EditText
-                            android:layout_width="match_parent"
-                            android:layout_height="50dp"
-                            android:background="@drawable/listing_background"
-                            android:hint="Items"
-                            android:paddingStart="10dp"
-                            android:layout_marginTop="20dp"
-                            android:textColorHint="#B6B5B5"
-                            android:textColor="@color/white"
-                            />
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:background="@drawable/listing_background"
+                android:hint="Items"
+                android:paddingStart="10dp"
+                android:textSize="16sp"
+                android:layout_marginTop="20dp"
+                android:textColorHint="#B6B5B5"
+                android:textColor="@color/white"
+                />
 
-                        <EditText
-                            android:layout_width="match_parent"
-                            android:layout_height="50dp"
-                            android:background="@drawable/listing_background"
-                            android:hint="Quantity"
-                            android:paddingStart="10dp"
-                            android:layout_marginTop="20dp"
-                            android:inputType="number"
-                            android:textColorHint="#B6B5B5"
-                            android:textColor="@color/white"
-                            />
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:background="@drawable/listing_background"
+                android:hint="Quantity"
+                android:paddingStart="10dp"
+                android:textSize="16sp"
+                android:layout_marginTop="20dp"
+                android:inputType="number"
+                android:textColorHint="#B6B5B5"
+                android:textColor="@color/white"
+                />
 
             <EditText
                 android:layout_width="match_parent"
@@ -161,6 +158,7 @@
                 android:hint="Utils"
                 android:paddingStart="10dp"
                 android:textColor="@color/white"
+                android:textSize="16sp"
                 android:textColorHint="#B6B5B5" />
 
             <TextView
@@ -180,6 +178,7 @@
                 android:background="@drawable/listing_background"
                 android:gravity="start"
                 android:hint="Write here.."
+                android:textSize="16sp"
                 android:padding="15dp"
                 android:textColor="@color/white"
                 android:textColorHint="#B6B5B5" />
@@ -208,7 +207,7 @@
 
                     <LinearLayout
                         android:layout_width="0dp"
-                        android:layout_height="175dp"
+                        android:layout_height="165dp"
                         android:background="@drawable/listing_background"
                         android:layout_gravity="center"
                         android:layout_marginEnd="15dp"
@@ -216,8 +215,8 @@
                         android:layout_weight="1">
 
                         <ImageView
-                            android:layout_width="100dp"
-                            android:layout_height="100dp"
+                            android:layout_width="65dp"
+                            android:layout_height="65dp"
                             android:layout_gravity="center"
                             android:src="@drawable/image_placeholder"
                             />
@@ -225,20 +224,22 @@
                     </LinearLayout>
                     <LinearLayout
                         android:layout_width="0dp"
-                        android:layout_height="175dp"
+                        android:layout_height="165dp"
                         android:background="@drawable/listing_background"
                         android:layout_gravity="center"
+                        android:layout_marginEnd="15dp"
                         android:gravity="center"
                         android:layout_weight="1">
 
                         <ImageView
-                            android:layout_width="100dp"
-                            android:layout_height="100dp"
+                            android:layout_width="65dp"
+                            android:layout_height="65dp"
                             android:layout_gravity="center"
                             android:src="@drawable/image_placeholder"
                             />
 
                     </LinearLayout>
+
 
                 </LinearLayout>
 
@@ -251,7 +252,7 @@
 
                     <LinearLayout
                         android:layout_width="0dp"
-                        android:layout_height="175dp"
+                        android:layout_height="165dp"
                         android:background="@drawable/listing_background"
                         android:layout_gravity="center"
                         android:layout_marginEnd="15dp"
@@ -259,8 +260,8 @@
                         android:layout_weight="1">
 
                         <ImageView
-                            android:layout_width="100dp"
-                            android:layout_height="100dp"
+                            android:layout_width="65dp"
+                            android:layout_height="65dp"
                             android:layout_gravity="center"
                             android:src="@drawable/image_placeholder"
                             />
@@ -268,26 +269,28 @@
                     </LinearLayout>
                     <LinearLayout
                         android:layout_width="0dp"
-                        android:layout_height="175dp"
+                        android:layout_height="165dp"
                         android:background="@drawable/listing_background"
                         android:layout_gravity="center"
+                        android:layout_marginEnd="15dp"
                         android:gravity="center"
                         android:layout_weight="1">
 
                         <ImageView
-                            android:layout_width="100dp"
-                            android:layout_height="100dp"
+                            android:layout_width="65dp"
+                            android:layout_height="65dp"
                             android:layout_gravity="center"
                             android:src="@drawable/image_placeholder"
                             />
 
                     </LinearLayout>
 
+
                 </LinearLayout>
 
                 <RelativeLayout
-                    android:layout_width="75dp"
-                    android:layout_height="75dp"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
                     android:background="@drawable/circle"
                     android:layout_gravity="center"
                     android:layout_marginTop="20dp"
@@ -322,6 +325,5 @@
         </LinearLayout>
 
     </ScrollView>
-
 
 </RelativeLayout>

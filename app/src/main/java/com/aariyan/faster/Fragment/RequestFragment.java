@@ -30,11 +30,11 @@ public class RequestFragment extends Fragment {
     private RequestListAdapter adapter;
 
     //Dummy data for Product showing:
-    private String[] productName = {"Vegetarian Italian Chopped Salad - kit","Vegetarian Italian Chopped Salad - kit","Vegetarian Italian Chopped Salad - kit","Vegetarian Italian Chopped Salad - kit"};
-    private String[] productPrice = {"$25.25","$15.75","$75.25","$50.25"};
-    private String[] orderDate = {"Dec 25, 2020","Dec 25, 2020","Dec 25, 2020","Dec 25, 2020"};
-    private String[] orderId = {"0976-345","0976-345","0976-345","0976-345"};
-    private int[] productImages = {R.drawable.dummy_image,R.drawable.dummy_image,R.drawable.dummy_image,R.drawable.dummy_image};
+    public static String[] productName = {"Vegetarian Italian Chopped Salad - kit","Vegetarian Italian Chopped Salad - kit","Vegetarian Italian Chopped Salad - kit","Vegetarian Italian Chopped Salad - kit"};
+    public static String[] productPrice = {"$25.25","$15.75","$75.25","$50.25"};
+    public static String[] orderDate = {"Dec 25, 2020","Dec 25, 2020","Dec 25, 2020","Dec 25, 2020"};
+    public static String[] orderId = {"0976-345","0976-345","0976-345","0976-345"};
+    public static int[] productImages = {R.drawable.dummy_image,R.drawable.dummy_image,R.drawable.dummy_image,R.drawable.dummy_image};
 
 
     //to inflate the View:

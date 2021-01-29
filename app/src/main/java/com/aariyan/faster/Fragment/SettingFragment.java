@@ -9,12 +9,6 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.aariyan.faster.R;
-
-/**
- * A simple {@link Fragment} subclass.
- * Use the {@link SettingFragment#newInstance} factory method to
- * create an instance of this fragment.
- */
 public class SettingFragment extends Fragment {
 
 
