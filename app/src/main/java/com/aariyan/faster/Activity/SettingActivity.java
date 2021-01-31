@@ -1,4 +1,4 @@
-package com.aariyan.faster.NavigationActivity;
+package com.aariyan.faster.Activity;
 
 import androidx.appcompat.app.AppCompatActivity;
 

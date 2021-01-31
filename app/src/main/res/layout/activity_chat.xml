@@ -5,14 +5,15 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/purple_700"
-    tools:context=".NavigationActivity.ChatActivity">
+    tools:context=".Activity.MessagingActivity">
 
 
     <!--Top toolbar layout-->
     <RelativeLayout
         android:id="@+id/toolbarCard"
         android:layout_width="match_parent"
-        android:layout_height="50dp">
+        android:layout_height="60dp"
+        android:background="@drawable/messaging_toolbar_back">
 
         <RelativeLayout
             android:layout_width="match_parent"
@@ -27,64 +28,116 @@
                 android:layout_centerVertical="true"
                 android:src="@drawable/back_icon" />
 
-            <TextView
+            <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_centerInParent="true"
-                android:text="Chat"
-                android:textColor="@android:color/white"
-                android:textSize="24sp"
-                android:textStyle="bold" />
+                android:layout_centerVertical="true"
+                android:layout_marginStart="15dp"
+                android:layout_toEndOf="@id/backBtn"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Driver XYZ"
+                    android:textColor="@android:color/white"
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Active Now"
+                    android:textColor="@android:color/white"
+                    android:textSize="11sp"
+                    android:textStyle="bold" />
+
+            </LinearLayout>
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_centerVertical="true"
+                android:src="@drawable/add_person_icon"
+
+                />
+
+
+        </RelativeLayout>
+    </RelativeLayout>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/chatRecyclerView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/toolbarCard"
+        android:layout_margin="15dp"
+        tools:listitem="@layout/single_messaging_layout"
+        android:layout_above="@id/bottomLayout"
+        />
+
+    <LinearLayout
+        android:id="@+id/bottomLayout"
+        android:layout_width="match_parent"
+        android:layout_alignParentBottom="true"
+        android:background="#2B3846"
+        android:layout_height="60dp">
+
+        <ImageView
+            android:id="@+id/micIcon"
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:src="@drawable/mic_icon"
+            android:layout_gravity="center_vertical"
+            />
+
+        <EditText
+            android:layout_width="0dp"
+            android:layout_weight="3"
+            android:layout_height="50dp"
+            android:background="@null"
+            android:hint="Write text here"
+            android:textColor="@android:color/white"
+            android:textColorHint="#AFB3BC"
+            android:layout_centerVertical="true"
+
+            />
+
+        <ImageView
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:src="@drawable/attachmen_icon"
+            android:layout_margin="15dp"
+            />
+
+        <RelativeLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_weight="1">
+
+            <RelativeLayout
+                android:layout_width="45dp"
+                android:layout_height="45dp"
+                android:background="@drawable/send_button_background"
+                >
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/sened_icon"
+                    android:layout_centerInParent="true"
+                    />
+            </RelativeLayout>
+
+
 
         </RelativeLayout>
 
-        <ImageView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_alignParentBottom="true"
-            android:src="@drawable/horizontal_separator" />
-
-
-        <!--        <View-->
-        <!--            android:layout_width="match_parent"-->
-        <!--            android:layout_height="1dp"-->
-        <!--            android:layout_alignParentBottom="true"-->
-        <!--            android:layout_marginStart="-10dp"-->
-        <!--            android:background="@color/white" />-->
-    </RelativeLayout>
-    <!--Top toolbar layout end-->
-
-    <com.google.android.material.tabs.TabLayout
-        android:layout_below="@id/toolbarCard"
-        android:id="@+id/tabLayout"
-        android:background="#2B3846"
-        android:layout_width="match_parent"
-        app:tabTextColor="@color/toolbar_separator"
-        app:tabSelectedTextColor="@color/white"
-        app:tabIndicatorColor="@color/white"
-        android:layout_height="65dp">
-
-        <com.google.android.material.tabs.TabItem
-            android:id="@+id/taskTab"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Requests" />
-
-        <com.google.android.material.tabs.TabItem
-            android:id="@+id/guestTab"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Inbox" />
-
-
-    </com.google.android.material.tabs.TabLayout>
-
-    <FrameLayout
-        android:id="@+id/viewPager"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_margin="15dp"
-        android:layout_below="@id/tabLayout" />
+    </LinearLayout>
 
 
 </RelativeLayout>

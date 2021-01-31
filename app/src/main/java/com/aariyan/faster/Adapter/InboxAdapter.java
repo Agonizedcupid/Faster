@@ -4,6 +4,7 @@ import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -34,9 +35,20 @@ public class InboxAdapter extends RecyclerView.Adapter<InboxAdapter.ViewHolder> 
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
 
+        //Mapping the list with model
         RequestListModel model = list.get(position);
+        //set the last message:
         holder.recentMessage.setText("Hi there this is the message, you have gotten the delivery");
+        //set the Order number & product name:
         holder.profileName.setText("Order # "+model.getOrderNumber()+" : "+model.getProductName());
+
+        //to open the chat:
+        holder.expandChat.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+            }
+        });
     }
 
     @Override
@@ -46,14 +58,19 @@ public class InboxAdapter extends RecyclerView.Adapter<InboxAdapter.ViewHolder> 
 
     public class ViewHolder extends RecyclerView.ViewHolder {
 
+        //to se the Profile name in the chat
         private TextView profileName;
+        //showing the last message
         private TextView recentMessage;
+        //to open the chat layout
+        private LinearLayout expandChat;
 
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
 
             profileName = itemView.findViewById(R.id.allName);
             recentMessage = itemView.findViewById(R.id.currentMessage);
+            expandChat = itemView.findViewById(R.id.expandChat);
         }
     }
 }
