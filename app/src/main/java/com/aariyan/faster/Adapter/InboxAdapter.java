@@ -1,6 +1,8 @@
 package com.aariyan.faster.Adapter;
 
+import android.app.Activity;
 import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -10,6 +12,7 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.aariyan.faster.Activity.MessagingActivity;
 import com.aariyan.faster.Model.RequestListModel;
 import com.aariyan.faster.R;
 
@@ -46,7 +49,8 @@ public class InboxAdapter extends RecyclerView.Adapter<InboxAdapter.ViewHolder> 
         holder.expandChat.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
+                context.startActivity(new Intent(context, MessagingActivity.class));
+                
             }
         });
     }

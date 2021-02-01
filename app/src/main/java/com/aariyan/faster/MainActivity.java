@@ -5,6 +5,7 @@ import androidx.core.content.ContextCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.fragment.app.Fragment;
 
+import android.content.Context;
 import android.content.SharedPreferences;
 import android.graphics.Color;
 import android.graphics.PorterDuff;
@@ -23,6 +24,8 @@ import com.google.android.material.navigation.NavigationView;
 import com.google.android.material.tabs.TabLayout;
 
 import java.util.Objects;
+
+import static com.aariyan.faster.Common.Common.sharedPreferences;
 
 public class MainActivity extends AppCompatActivity
         //  implements NavigationView.OnNavigationItemSelectedListener
@@ -51,7 +54,14 @@ public class MainActivity extends AppCompatActivity
                 Common.onBoardingCompletedStatus, true);
         sharedPreferencesEditor.apply();
 
+        checkAuthenticationType();
         initUI();
+    }
+
+    private void checkAuthenticationType() {
+
+        sharedPreferences = getSharedPreferences("AuthenticationTypes", Context.MODE_PRIVATE);
+        Common.AuthenticationType = sharedPreferences.getString("type",Common.DEFAULT_VAL);
     }
 
     //when go to the back:
@@ -157,6 +167,7 @@ public class MainActivity extends AppCompatActivity
         // instantiate for onClick event
         //navigationView.setNavigationItemSelectedListener(MainActivity.this);
         //set the default fragment for the first time:
+
         openNavigationMenu(new HomeFragment());
         //getSupportFragmentManager().beginTransaction().replace(R.id.fragmentContainer, new HomeFragment()).commit();
         //Marked the menu as clicked:

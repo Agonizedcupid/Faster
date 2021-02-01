@@ -3,6 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:background="@color/purple_700"
     tools:context=".Fragment.ListingFragment">
 
@@ -51,7 +52,44 @@
     </RelativeLayout>
     <!--Top toolbar layout end-->
 
+    <com.google.android.material.tabs.TabLayout
+        android:layout_below="@id/toolbarCard"
+        android:id="@+id/tabLayout"
+        android:background="@color/purple_700"
+        android:layout_width="match_parent"
+        app:tabTextColor="@color/toolbar_separator"
+        app:tabSelectedTextColor="@color/white"
+        app:tabIndicatorColor="@color/white"
+        app:tabIndicatorFullWidth="false"
+        android:layout_height="65dp">
+
+        <com.google.android.material.tabs.TabItem
+            android:id="@+id/businessTab"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Business" />
+
+        <com.google.android.material.tabs.TabItem
+            android:id="@+id/driversTab"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Drivers" />
+
+
+    </com.google.android.material.tabs.TabLayout>
+
+    <FrameLayout
+        android:id="@+id/viewPager"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="15dp"
+        android:layout_marginBottom="10dp"
+        android:layout_below="@id/tabLayout" />
+
     <ScrollView
+        android:id="@+id/listingItems"
+        android:visibility="gone"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@id/toolbarCard"

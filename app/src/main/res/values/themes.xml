@@ -14,6 +14,17 @@
         <!-- Customize your theme here. -->
     </style>
 
+    <!--Theme for chat activity-->
+    <style name="Theme.Chat" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+        <!-- Primary brand color. -->
+        <item name="colorPrimary">#074A95</item>
+        <item name="colorPrimaryVariant">#074A95</item>
+        <item name="colorOnPrimary">@color/white</item>
+        <!-- Status bar color. -->
+        <item name="android:statusBarColor" tools:targetApi="l">?attr/colorPrimaryVariant</item>
+        <!-- Customize your theme here. -->
+    </style>
+
     <style name="MyTabLayoutTextAppearance" parent="TextAppearance.AppCompat.Widget.ActionBar.Title.Inverse">
         <item name="android:textSize">12sp</item>
         <item name="android:textAllCaps">false</item>

@@ -2,6 +2,8 @@ package com.aariyan.faster.Authentication.Personal;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.annotation.SuppressLint;
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -12,11 +14,14 @@ import com.aariyan.faster.MainActivity;
 import com.aariyan.faster.R;
 import com.google.android.material.textfield.TextInputLayout;
 
+import static com.aariyan.faster.Common.Common.editor;
+import static com.aariyan.faster.Common.Common.sharedPreferences;
+
 public class SignUpActivity extends AppCompatActivity {
 
     private String checkAccountType = "";
 
-    private TextInputLayout emailEditTextHint,phoneNumberLayout;
+    private TextInputLayout emailEditTextHint, phoneNumberLayout;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -61,6 +66,7 @@ public class SignUpActivity extends AppCompatActivity {
             public void onClick(View view) {
 
                 if (checkAccountType.equals("Personal")) {
+                    saveLogInStatus();
                     startActivity(new Intent(SignUpActivity.this, MainActivity.class));
                 } else {
                     startActivity(new Intent(SignUpActivity.this, SignUpSecondPart.class));
@@ -69,5 +75,15 @@ public class SignUpActivity extends AppCompatActivity {
                 overridePendingTransition(android.R.anim.slide_in_left, android.R.anim.slide_out_right);
             }
         });
+    }
+
+    @SuppressLint("CommitPrefEdits")
+    private void saveLogInStatus() {
+
+        sharedPreferences = getSharedPreferences("AuthenticationTypes", Context.MODE_PRIVATE);
+        editor = sharedPreferences.edit();
+        editor.putString("type", "0");
+        editor.commit();
+
     }
 }

@@ -20,13 +20,15 @@ import java.util.List;
 
 public class MessagingActivity extends AppCompatActivity {
 
+    String md = "The quick, brown fox jumps over a lazy dog. DJs flock by when MTV ax quiz prog. Junk MTV quiz graced by fox whelps. Bawds jog, flick quartz, vex nymphs. Waltz, bad nymph, for quick jigs";
+
     private RecyclerView recyclerView;
 
     List<MessageModel> list = new ArrayList<>();
     MessageModel model;
 
     private int[] types = {0,1,0,1,0,1,0,1};
-    private int[] receiverM = {R.string.dummyString,R.string.dummyString,R.string.dummyString,R.string.dummyString,R.string.dummyString,R.string.dummyString,R.string.dummyString,R.string.dummyString};
+    private String[] receiverM = {md,md,md,md,md,md,md,md};
     private String[] times = {"01.0 PM","02.0 PM","03.0 PM","04.0 PM","05.0 PM","06.0 PM","07.0 PM","08.0 PM",};
 
 

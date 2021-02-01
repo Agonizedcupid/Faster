@@ -37,7 +37,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_centerInParent="true"
-                    android:src="@drawable/small_message_icon_custom" />
+                    android:src="@drawable/sm" />
 
                 <TextView
                     android:id="@+id/skipBtn"

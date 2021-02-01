@@ -1,5 +1,6 @@
 package com.aariyan.faster.Fragment;
 
+import android.content.Context;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
@@ -12,7 +13,10 @@ import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
+import com.aariyan.faster.Common.Common;
 import com.aariyan.faster.R;
+
+import static com.aariyan.faster.Common.Common.sharedPreferences;
 
 
 public class HomeFragment extends Fragment {
@@ -81,6 +85,8 @@ public class HomeFragment extends Fragment {
 
         return root;
     }
+
+
 
     private void initUI() {
         //main menus:
