@@ -1,5 +1,6 @@
 package com.aariyan.faster.Fragment;
 
+import android.content.Context;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
@@ -9,6 +10,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 
+import com.aariyan.faster.Common.Common;
 import com.aariyan.faster.R;
 import com.google.android.material.tabs.TabLayout;
 
@@ -52,7 +54,14 @@ public class OrderFragment extends Fragment {
         searchIcon = root.findViewById(R.id.searchIcon);
 
         //starting the default fragment:
-        startFragment(new PastOrderFragment());
+        if (Common.AuthenticationType.equals("1")) {
+            startFragment(new PastOrderFragment());
+        } else {
+            startFragment(new PastOrderFragmentPersonal());
+            Objects.requireNonNull(tabLayout.getTabAt(1)).setText("Upcoming");
+        }
+
+
 
         //tab action event:
         tabLayout.addOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
@@ -64,7 +73,11 @@ public class OrderFragment extends Fragment {
                 //confirming the tab position:
                 //First tab if 0:
                 if(tab.getPosition() == 0) {
-                    startFragment(new PastOrderFragment());
+                    if (Common.AuthenticationType.equals("1")) {
+                        startFragment(new PastOrderFragment());
+                    } else {
+                        startFragment(new PastOrderFragmentPersonal());
+                    }
                 }
 
                 //second tab if 1

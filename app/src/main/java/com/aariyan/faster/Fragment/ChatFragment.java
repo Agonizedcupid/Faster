@@ -10,6 +10,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 
+import com.aariyan.faster.Common.Common;
 import com.aariyan.faster.R;
 import com.google.android.material.tabs.TabLayout;
 
@@ -55,7 +56,12 @@ public class ChatFragment extends Fragment {
         searchIcon = root.findViewById(R.id.searchIcon);
 
         //starting the default fragment:
-        startFragment(new RequestFragment());
+        if (Common.AuthenticationType.equals("1")) {
+            startFragment(new RequestFragment());
+        }else {
+            startFragment(new RequestPersonalChat());
+        }
+
 
         //tab action event:
         tabLayout.addOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
@@ -67,7 +73,11 @@ public class ChatFragment extends Fragment {
                 //confirming the tab position:
                 //First tab if 0:
                 if(tab.getPosition() == 0) {
-                    startFragment(new RequestFragment());
+                    if (Common.AuthenticationType.equals("1")) {
+                        startFragment(new RequestFragment());
+                    }else {
+                        startFragment(new RequestPersonalChat());
+                    }
                     searchIcon.setVisibility(View.GONE);
                 }
 
