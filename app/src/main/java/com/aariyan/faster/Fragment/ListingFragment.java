@@ -9,10 +9,13 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.FrameLayout;
 import android.widget.ScrollView;
+import android.widget.TextView;
 
 import com.aariyan.faster.Common.Common;
 import com.aariyan.faster.R;
 import com.google.android.material.tabs.TabLayout;
+
+import org.w3c.dom.Text;
 
 import java.util.Objects;
 
@@ -24,6 +27,8 @@ public class ListingFragment extends Fragment {
     private View root;
     private ScrollView listingItems;
     private FrameLayout viewPager;
+
+    private TextView listingTitle;
 
     public ListingFragment() {
         // Required empty public constructor
@@ -51,16 +56,20 @@ public class ListingFragment extends Fragment {
         listingItems = root.findViewById(R.id.listingItems);
         viewPager = root.findViewById(R.id.viewPager);
         tabLayout = root.findViewById(R.id.tabLayout);
+
+        listingTitle = root.findViewById(R.id.newListingTitle);
         //starting the default fragment:
         if (Common.AuthenticationType.equals("0")) {
             tabLayout.setVisibility(View.VISIBLE);
             viewPager.setVisibility(View.VISIBLE);
             listingItems.setVisibility(View.GONE);
+            listingTitle.setVisibility(View.GONE);
             startFragment(new BusinessFragment());
         } else {
             tabLayout.setVisibility(View.GONE);
             viewPager.setVisibility(View.GONE);
             listingItems.setVisibility(View.VISIBLE);
+            listingTitle.setVisibility(View.VISIBLE);
         }
 
 

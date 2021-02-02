@@ -15,12 +15,14 @@ import android.widget.ImageView;
 
 import com.aariyan.faster.Common.Common;
 import com.aariyan.faster.Fragment.ChatFragment;
+import com.aariyan.faster.Fragment.HomeForBusinessFragment;
 import com.aariyan.faster.Fragment.HomeFragment;
 import com.aariyan.faster.Fragment.ListingFragment;
 import com.aariyan.faster.Fragment.OrderFragment;
 import com.aariyan.faster.Fragment.SettingFragment;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.navigation.NavigationView;
+import com.google.android.material.tabs.TabItem;
 import com.google.android.material.tabs.TabLayout;
 
 import java.util.Objects;
@@ -41,6 +43,7 @@ public class MainActivity extends AppCompatActivity
 
     private BottomNavigationView bottomNavigationView;
     private TabLayout tabLayout;
+    private TabItem listingTabItems;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -61,13 +64,14 @@ public class MainActivity extends AppCompatActivity
     private void checkAuthenticationType() {
 
         sharedPreferences = getSharedPreferences("AuthenticationTypes", Context.MODE_PRIVATE);
-        Common.AuthenticationType = sharedPreferences.getString("type",Common.DEFAULT_VAL);
+        Common.AuthenticationType = sharedPreferences.getString("type", Common.DEFAULT_VAL);
     }
 
     //when go to the back:
     @Override
     public void onBackPressed() {
 
+        super.onBackPressed();
         //check whether the drawer already open or not:
         //If, already open, then close it first:
 //        if (drawerLayout.isDrawerOpen(GravityCompat.START)) {
@@ -75,7 +79,7 @@ public class MainActivity extends AppCompatActivity
 //            drawerLayout.closeDrawer(GravityCompat.START);
 //        } else {
 //            //opposite condition:
-//            super.onBackPressed();
+//
 //
 //        }
     }
@@ -83,7 +87,17 @@ public class MainActivity extends AppCompatActivity
     private void initUI() {
 
         tabLayout = findViewById(R.id.tabs);
+        listingTabItems = findViewById(R.id.listingTabs);
         Objects.requireNonNull(tabLayout.getTabAt(0)).getIcon().setColorFilter(Color.parseColor("#FFFFFF"), PorterDuff.Mode.SRC_IN);
+
+        if (Common.AuthenticationType.equals("0")) {
+            tabLayout.getTabAt(1).setIcon(R.drawable.list_navigation_menu);
+            tabLayout.getTabAt(1).setText("LISTING");
+        } else {
+            tabLayout.getTabAt(1).setIcon(R.drawable.create_listing_icon);
+            tabLayout.getTabAt(1).setText("CREATE LIST");
+        }
+
         tabLayout.addOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
             @Override
             public void onTabSelected(TabLayout.Tab tab) {
@@ -91,17 +105,22 @@ public class MainActivity extends AppCompatActivity
                 tab.getIcon().setColorFilter(tabIconColor, PorterDuff.Mode.SRC_IN);
 
                 if (tab.getPosition() == 0) {
-                    openNavigationMenu(new HomeFragment());
+
+                    if (Common.AuthenticationType.equals("0")) {
+                        openNavigationMenu(new HomeFragment());
+
+                    } else {
+                        openNavigationMenu(new HomeForBusinessFragment());
+                    }
+
+
                 } else if (tab.getPosition() == 1) {
                     openNavigationMenu(new ListingFragment());
-                }
-                else if (tab.getPosition() == 2) {
+                } else if (tab.getPosition() == 2) {
                     openNavigationMenu(new ChatFragment());
-                }
-                else if (tab.getPosition() == 3) {
+                } else if (tab.getPosition() == 3) {
                     openNavigationMenu(new OrderFragment());
-                }
-                else if (tab.getPosition() == 4) {
+                } else if (tab.getPosition() == 4) {
                     openNavigationMenu(new SettingFragment());
                 }
 
@@ -168,7 +187,12 @@ public class MainActivity extends AppCompatActivity
         //navigationView.setNavigationItemSelectedListener(MainActivity.this);
         //set the default fragment for the first time:
 
-        openNavigationMenu(new HomeFragment());
+        if (Common.AuthenticationType.equals("0")) {
+            openNavigationMenu(new HomeFragment());
+
+        } else {
+            openNavigationMenu(new HomeForBusinessFragment());
+        }
         //getSupportFragmentManager().beginTransaction().replace(R.id.fragmentContainer, new HomeFragment()).commit();
         //Marked the menu as clicked:
         //navigationView.setCheckedItem(R.id.home_menu);

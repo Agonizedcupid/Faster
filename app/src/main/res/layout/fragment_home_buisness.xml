@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/purple_700"
+    tools:context=".Fragment.HomeForBusinessFragment">
+
+    <LinearLayout
+        android:id="@+id/toolbarCard"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:background="@color/purple_700">
+
+        <RelativeLayout
+            android:layout_width="0dp"
+            android:layout_weight="7"
+            android:layout_height="match_parent"
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="10dp">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                >
+
+
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:layout_centerInParent="true"
+                    android:layout_marginStart="50dp"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:layout_width="35dp"
+                        android:layout_height="25dp"
+                        android:layout_gravity="center_vertical"
+                        android:backgroundTint="@android:color/white"
+                        android:src="@drawable/search_icon" />
+
+                    <EditText
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="@null"
+                        android:hint="Search for alocation"
+                        android:paddingStart="10dp"
+                        android:textColor="@android:color/white"
+                        android:textColorHint="@android:color/white"
+                        android:textSize="16sp" />
+
+
+                </LinearLayout>
+
+            </RelativeLayout>
+
+
+
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="2"
+            >
+
+            <RelativeLayout
+                android:layout_width="50dp"
+                android:layout_height="match_parent"
+                android:background="@drawable/top_business_extra_background"
+                >
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/top_right_extra_icon"
+                    android:layout_centerInParent="true"
+                    />
+
+            </RelativeLayout>
+
+        </RelativeLayout>
+
+    </LinearLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_below="@id/toolbarCard"
+        android:layout_height="wrap_content">
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <RelativeLayout
+                android:id="@+id/globeLayout"
+                android:layout_width="match_parent"
+                android:layout_height="500dp"
+                android:layout_marginStart="-50dp"
+                android:layout_marginTop="50dp"
+                android:layout_marginEnd="-50dp"
+                android:background="@drawable/big_circle"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:id="@+id/globe"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:layout_margin="70dp"
+                    android:src="@drawable/globe" />
+
+
+            </RelativeLayout>
+
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_below="@id/globeLayout"
+                android:layout_centerInParent="true"
+                android:layout_marginTop="75dp"
+                android:layout_marginBottom="75dp"
+                android:src="@drawable/d_icon" />
+
+        </RelativeLayout>
+    </ScrollView>
+
+</RelativeLayout>
