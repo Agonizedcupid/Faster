@@ -46,14 +46,6 @@
             android:layout_height="wrap_content"
             android:layout_alignParentBottom="true"
             android:src="@drawable/horizontal_separator" />
-
-
-        <!--        <View-->
-        <!--            android:layout_width="match_parent"-->
-        <!--            android:layout_height="1dp"-->
-        <!--            android:layout_alignParentBottom="true"-->
-        <!--            android:layout_marginStart="-10dp"-->
-        <!--            android:background="@color/white" />-->
     </RelativeLayout>
     <!--Top toolbar layout end-->
 
