@@ -59,6 +59,13 @@ public class SignUpSecondPart extends AppCompatActivity {
 
     private void initUI() {
 
+        findViewById(R.id.backBtn).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                onBackPressed();
+            }
+        });
+
         recyclerView = findViewById(R.id.industriesRecyclerView);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
 

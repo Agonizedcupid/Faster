@@ -73,6 +73,7 @@ public class OrderFragment extends Fragment {
                 //confirming the tab position:
                 //First tab if 0:
                 if(tab.getPosition() == 0) {
+                    searchIcon.setVisibility(View.GONE);
                     if (Common.AuthenticationType.equals("1")) {
                         startFragment(new PastOrderFragment());
                     } else {
@@ -83,6 +84,7 @@ public class OrderFragment extends Fragment {
                 //second tab if 1
                 if(tab.getPosition() == 1) {
                     startFragment(new CurrentFragment());
+                    searchIcon.setVisibility(View.VISIBLE);
                 }
 
             }

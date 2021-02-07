@@ -25,6 +25,14 @@ public class SignUpThirdPart extends AppCompatActivity {
     }
 
     private void initUi() {
+
+        findViewById(R.id.backBtn).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                onBackPressed();
+            }
+        });
+
         findViewById(R.id.continueBtn).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

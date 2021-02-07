@@ -52,4 +52,8 @@ dependencies {
     implementation 'jp.wasabeef:blurry:4.0.0'
 //Circlar image view
     implementation 'de.hdodenhof:circleimageview:3.1.0'
+
+    implementation 'com.romandanylyk:pageindicatorview:1.0.2'
+
+    implementation 'com.github.mazenrashed:DotsIndicatorWithoutViewpager:1.0.0'
 }

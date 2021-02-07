@@ -6,27 +6,172 @@
     xmlns:custom="http://schemas.android.com/apk/res-auto"
     android:background="@color/on_boarding_screen_background"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     tools:context=".OnBoarding.OnBoardingScreen">
 
-    <com.smarteist.autoimageslider.SliderView
-        android:id="@+id/fullSlider"
+    <LinearLayout
         android:layout_width="match_parent"
+        android:orientation="vertical"
         android:layout_height="match_parent"
-        app:sliderAnimationDuration="600"
-        app:sliderAutoCycleDirection="back_and_forth"
-        app:sliderAutoCycleEnabled="true"
-        app:sliderIndicatorAnimationDuration="600"
-        app:sliderIndicatorGravity="center_horizontal"
-        app:sliderIndicatorMargin="15dp"
-        app:sliderIndicatorOrientation="horizontal"
-        app:sliderIndicatorPadding="3dp"
-        app:sliderIndicatorRadius="2dp"
-        app:sliderIndicatorSelectedColor="@color/on_boarding_active_color"
-        app:sliderIndicatorUnselectedColor="@color/on_boarding_inactive_color"
-        app:sliderScrollTimeInSec="2"
-        app:sliderStartAutoCycle="true" />
+        android:layout_above="@+id/bottomActionLayout"
+        android:layout_marginBottom="20dp"
+        >
+
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="275dp"
+            android:layout_height="0dp"
+            android:layout_weight="3"
+            android:layout_gravity="center_horizontal"
+            app:cardCornerRadius="25dp"
+            android:layout_marginTop="25dp"
+            app:cardElevation="7dp"
+            >
+            <!--view pager for splash-->
+
+            <androidx.viewpager.widget.ViewPager
+                android:id="@+id/vp_splash"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                >
+            </androidx.viewpager.widget.ViewPager>
+
+
+        </androidx.cardview.widget.CardView>
+
+        <com.rd.PageIndicatorView
+            android:id="@+id/pageIndicatorView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:piv_animationType="drop"
+            app:piv_dynamicCount="true"
+            app:piv_interactiveAnimation="true"
+            app:piv_padding="12dp"
+            app:piv_radius="5dp"
+            app:piv_selectedColor="@color/on_boarding_active_color"
+            app:piv_unselectedColor="@color/on_boarding_inactive_color"
+            app:piv_viewPager="@id/vp_splash"
+            android:layout_gravity="center_horizontal"
+            />
+
+        <TextView
+            android:id="@+id/sliderTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Steps 1"
+            android:textStyle="bold"
+            android:textSize="24sp"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:layout_marginTop="25dp"
+            android:layout_centerHorizontal="true"
+            android:layout_below="@id/imageCard"
+            android:textColor="@android:color/white"
+            />
+
+        <TextView
+            android:id="@+id/sliderDescriptions"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/dummyString"
+            android:textSize="16sp"
+            android:inputType="textMultiLine"
+            android:layout_marginStart="35dp"
+            android:layout_marginEnd="35dp"
+            android:layout_marginTop="15dp"
+            android:layout_centerHorizontal="true"
+            android:layout_below="@id/sliderTitle"
+            android:gravity="center"
+            android:textAlignment="center"
+            android:textColor="@android:color/white"
+            />
+
+<!--        <TextView-->
+<!--            android:id="@+id/skipBtn"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:text="Skip"-->
+<!--            android:textSize="16sp"-->
+<!--            android:layout_gravity="center"-->
+<!--            android:layout_centerHorizontal="true"-->
+<!--            android:layout_alignParentBottom="true"-->
+<!--            android:layout_marginBottom="25dp"-->
+<!--            android:layout_marginTop="25dp"-->
+<!--            android:gravity="center"-->
+<!--            android:textAlignment="center"-->
+<!--            android:textColor="@android:color/white"-->
+<!--            />-->
+
+    </LinearLayout>
+
+    <RelativeLayout
+        android:id="@+id/bottomActionLayout"
+        android:layout_width="match_parent"
+        android:layout_height="75dp"
+        android:layout_alignParentBottom="true"
+        android:orientation="horizontal"
+        android:weightSum="2"
+        >
+
+        <TextView
+            android:id="@+id/skipBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Skip"
+            android:textSize="16sp"
+            android:layout_gravity="center"
+            android:layout_centerHorizontal="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginBottom="25dp"
+            android:layout_marginTop="25dp"
+            android:gravity="center"
+            android:textAlignment="center"
+            android:textColor="@android:color/white"
+            />
+
+
+        <LinearLayout
+            android:visibility="gone"
+            android:id="@+id/buttonLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:orientation="horizontal"
+            android:weightSum="2"
+            >
+            <TextView
+                android:id="@+id/logInTextOnSlider"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="75dp"
+                android:text="Log In"
+                android:background="#32465C"
+                android:textColor="@android:color/white"
+                android:layout_gravity="center"
+                android:textAlignment="center"
+                android:textSize="20sp"
+                android:gravity="center"
+                android:textStyle="bold"
+                />
+
+            <TextView
+                android:id="@+id/singUpTextOnSlider"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="75dp"
+                android:text="Sign Up"
+                android:background="#F6A233"
+                android:textColor="@android:color/white"
+                android:layout_gravity="center"
+                android:textAlignment="center"
+                android:textSize="20sp"
+                android:gravity="center"
+                android:textStyle="bold"
+                />
+        </LinearLayout>
 
 
 
 
+    </RelativeLayout>
 </RelativeLayout>
