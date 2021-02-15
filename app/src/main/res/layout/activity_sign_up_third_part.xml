@@ -92,7 +92,8 @@
                     android:paddingEnd="15dp"
                     android:textColorHint="@android:color/white"
                     app:endIconMode="custom"
-
+                    app:boxStrokeWidth="0dp"
+                    app:boxStrokeWidthFocused="0dp"
                     app:endIconTint="@android:color/white"
                     app:hintAnimationEnabled="true"
                     app:hintTextColor="@android:color/white">
@@ -123,6 +124,8 @@
                     android:textAlignment="textStart"
                     android:textColorHint="@android:color/white"
                     app:endIconMode="custom"
+                    app:boxStrokeWidth="0dp"
+                    app:boxStrokeWidthFocused="0dp"
                     app:endIconTint="@android:color/white"
                     app:hintAnimationEnabled="true"
                     app:hintTextColor="@android:color/white">
@@ -154,7 +157,8 @@
                     android:paddingEnd="15dp"
                     android:textColorHint="@android:color/white"
                     app:endIconMode="custom"
-
+                    app:boxStrokeWidth="0dp"
+                    app:boxStrokeWidthFocused="0dp"
                     app:endIconTint="@android:color/white"
                     app:hintAnimationEnabled="true"
                     app:hintTextColor="@android:color/white">

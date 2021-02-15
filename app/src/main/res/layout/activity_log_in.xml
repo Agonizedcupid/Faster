@@ -82,6 +82,8 @@
             android:paddingEnd="15dp"
             app:endIconDrawable="@drawable/email_icon"
             app:endIconMode="custom"
+            app:boxStrokeWidth="0dp"
+            app:boxStrokeWidthFocused="0dp"
             app:endIconTint="@android:color/white"
             android:inputType="textEmailAddress"
             android:layout_height="60dp">

@@ -14,6 +14,7 @@
         <!-- Customize your theme here. -->
     </style>
 
+
     <!--Theme for chat activity-->
     <style name="Theme.Chat" parent="Theme.MaterialComponents.DayNight.NoActionBar">
         <!-- Primary brand color. -->

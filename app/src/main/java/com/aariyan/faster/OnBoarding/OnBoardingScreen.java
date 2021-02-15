@@ -86,7 +86,7 @@ public class OnBoardingScreen extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 startActivity(new Intent(OnBoardingScreen.this, AccountType.class));
-                overridePendingTransition(android.R.anim.fade_out, android.R.anim.fade_in);
+               // overridePendingTransition(android.R.anim.fade_out, android.R.anim.fade_in);
             }
         });
 
@@ -94,19 +94,10 @@ public class OnBoardingScreen extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 startActivity(new Intent(OnBoardingScreen.this, LogInActivity.class));
-                overridePendingTransition(android.R.anim.fade_out, android.R.anim.fade_in);
+                //overridePendingTransition(android.R.anim.fade_out, android.R.anim.fade_in);
             }
         });
 
-//        for (int i=0; i<sliderImages.length; i++) {
-////            list.add(new OnBoardingModel(
-////                   sliderImages[i],
-////                   titles[i],
-////                   descriptions[i]
-////            ));
-//
-//            imageList.add(sliderImages[i]);
-//        }
 
         imageList.add(R.drawable.one_boarding_one);
         imageList.add(R.drawable.one_board_two);

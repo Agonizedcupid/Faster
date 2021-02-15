@@ -10,7 +10,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:id="@+id/pastOrderRecyclerview"
-        tools:listitem="@layout/single_past_order_list"
+        tools:listitem="@layout/single_current_order_list"
         />
 
     <TextView

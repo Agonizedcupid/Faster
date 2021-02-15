@@ -7,18 +7,18 @@
     app:cardCornerRadius="15dp"
     app:cardElevation="7dp"
     app:cardBackgroundColor="#334253"
-    app:cardUseCompatPadding="true"
+    android:layout_margin="10dp"
     >
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_margin="10dp"
         android:layout_gravity="center_vertical"
         android:gravity="center_vertical"
         android:orientation="vertical">
 
         <RelativeLayout
+            android:layout_margin="10dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
 
@@ -98,7 +98,7 @@
             android:layout_width="match_parent"
             android:layout_height="1dp"
             android:layout_marginTop="10dp"
-            android:background="#73A4DD" />
+            android:background="@color/toolbar_separator" />
 
 
         <LinearLayout
@@ -114,12 +114,15 @@
                 android:text="Receiver Details"
                 android:textColor="#CFCECE"
                 android:textSize="14sp"
+                android:layout_marginStart="10dp"
                 android:textStyle="normal" />
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
+                android:layout_marginStart="10dp"
+                android:layout_marginEnd="10dp"
                 android:layout_marginTop="7dp"
                 >
 
@@ -163,18 +166,16 @@
                 </LinearLayout>
 
                 <ImageView
-                    android:layout_width="0dp"
-                    android:layout_weight="1"
-                    android:layout_height="wrap_content"
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
                     android:src="@drawable/white_phone"
                     android:layout_gravity="center_vertical"
                     android:layout_marginStart="7dp"
                     />
 
                 <ImageView
-                    android:layout_width="0dp"
-                    android:layout_weight="1"
-                    android:layout_height="wrap_content"
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
                     android:src="@drawable/white_message"
                     android:layout_gravity="center_vertical"
                     android:layout_marginStart="7dp"
@@ -189,7 +190,7 @@
             android:layout_width="match_parent"
             android:layout_height="1dp"
             android:layout_marginTop="10dp"
-            android:background="#73A4DD" />
+            android:background="@color/toolbar_separator" />
 
         <TextView
             android:layout_width="wrap_content"
@@ -197,6 +198,7 @@
             android:text="Driver Details"
             android:textColor="#CFCECE"
             android:layout_marginTop="7dp"
+            android:layout_marginStart="10dp"
             android:textSize="14sp"
             android:textStyle="normal" />
 
@@ -205,6 +207,8 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="7dp"
             android:layout_marginBottom="10dp"
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="10dp"
             android:orientation="horizontal">
 
             <RelativeLayout
@@ -253,18 +257,16 @@
             </LinearLayout>
 
             <ImageView
-                android:layout_width="0dp"
-                android:layout_weight="1"
-                android:layout_height="wrap_content"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
                 android:src="@drawable/white_phone"
                 android:layout_gravity="center_vertical"
                 android:layout_marginStart="7dp"
                 />
 
             <ImageView
-                android:layout_width="0dp"
-                android:layout_weight="1"
-                android:layout_height="wrap_content"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
                 android:src="@drawable/white_message"
                 android:layout_gravity="center_vertical"
                 android:layout_marginStart="7dp"
@@ -276,7 +278,7 @@
             android:layout_width="match_parent"
             android:layout_height="1dp"
             android:layout_marginTop="10dp"
-            android:background="#73A4DD" />
+            android:background="@color/toolbar_separator" />
 
         <TextView
             android:layout_width="match_parent"

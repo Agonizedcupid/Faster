@@ -55,8 +55,8 @@
             </LinearLayout>
 
             <ImageView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
                 android:layout_alignParentEnd="true"
                 android:layout_centerVertical="true"
                 android:src="@drawable/add_person_icon"
@@ -86,9 +86,8 @@
 
         <ImageView
             android:id="@+id/micIcon"
-            android:layout_weight="1"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
             android:src="@drawable/mic_icon"
             android:layout_gravity="center_vertical"
             />
@@ -101,6 +100,7 @@
             android:hint="Write text here"
             android:textColor="@android:color/white"
             android:textColorHint="#AFB3BC"
+            android:paddingStart="10dp"
             android:layout_centerVertical="true"
 
             />
