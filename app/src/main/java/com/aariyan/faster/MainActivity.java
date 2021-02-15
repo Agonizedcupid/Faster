@@ -61,6 +61,7 @@ public class MainActivity extends AppCompatActivity
         initUI();
     }
 
+    //Checking authentication type
     private void checkAuthenticationType() {
 
         sharedPreferences = getSharedPreferences("AuthenticationTypes", Context.MODE_PRIVATE);
