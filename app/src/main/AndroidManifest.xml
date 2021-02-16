@@ -9,9 +9,12 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Faster">
+        <activity android:name=".Authentication.ForgetPassThirdActivity"></activity>
+        <activity android:name=".Authentication.ForgetPassSecondActivity" />
+        <activity android:name=".Authentication.ForgetPassFirstActivity" />
         <activity
             android:name=".Activity.MessagingActivity"
-            android:theme="@style/Theme.Chat"></activity>
+            android:theme="@style/Theme.Chat" />
         <activity android:name=".Activity.SettingActivity" />
         <activity android:name=".Activity.ListingActivity" />
         <activity android:name=".Authentication.Business.SignUpThirdPart" />

@@ -131,10 +131,10 @@
 
                     <com.google.android.material.textfield.TextInputEditText
                         android:layout_width="match_parent"
+                        android:layout_height="match_parent"
                         android:background="@drawable/text_box_round"
-                        android:textColorHint="@android:color/white"
                         android:textColor="@android:color/white"
-                        android:layout_height="match_parent">
+                        android:textColorHint="@android:color/white">
 
                     </com.google.android.material.textfield.TextInputEditText>
 

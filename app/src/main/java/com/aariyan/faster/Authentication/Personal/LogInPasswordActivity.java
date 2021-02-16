@@ -10,6 +10,7 @@ import android.os.Bundle;
 import android.view.View;
 
 import com.aariyan.faster.Authentication.AccountType;
+import com.aariyan.faster.Authentication.ForgetPassFirstActivity;
 import com.aariyan.faster.MainActivity;
 import com.aariyan.faster.R;
 
@@ -48,6 +49,13 @@ public class LogInPasswordActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 startActivity(new Intent(LogInPasswordActivity.this, AccountType.class));
+            }
+        });
+
+        findViewById(R.id.forgetPassword).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(LogInPasswordActivity.this, ForgetPassFirstActivity.class));
             }
         });
     }

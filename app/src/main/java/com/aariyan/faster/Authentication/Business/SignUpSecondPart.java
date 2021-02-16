@@ -9,6 +9,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageView;
+import android.widget.RelativeLayout;
 import android.widget.Toast;
 
 import com.aariyan.faster.Adapter.BusinessIndustryAdapter;
@@ -22,7 +23,7 @@ import java.util.List;
 
 public class SignUpSecondPart extends AppCompatActivity {
 
-    private ImageView selectBusinessIndustry;
+    private RelativeLayout selectBusinessIndustry;
     public static BottomSheetBehavior bottomSheetBehavior;
     View bottomSheet;
 
