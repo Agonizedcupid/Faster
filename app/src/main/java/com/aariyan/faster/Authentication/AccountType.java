@@ -20,11 +20,11 @@ public class AccountType extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_account_type);
 
-//        SharedPreferences.Editor sharedPreferencesEditor =
-//                PreferenceManager.getDefaultSharedPreferences(AccountType.this).edit();
-//        sharedPreferencesEditor.putBoolean(
-//                Common.onBoardingCompletedStatus, true);
-//        sharedPreferencesEditor.apply();
+        SharedPreferences.Editor sharedPreferencesEditor =
+                PreferenceManager.getDefaultSharedPreferences(AccountType.this).edit();
+        sharedPreferencesEditor.putBoolean(
+                Common.onBoardingCompletedStatus, true);
+        sharedPreferencesEditor.apply();
 
         initUI();
     }

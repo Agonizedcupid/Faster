@@ -76,6 +76,7 @@ public class OnBoardingScreen extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 startActivity(new Intent(OnBoardingScreen.this, AccountType.class));
+                //lastState(3);
                 finish();
             }
         });
@@ -161,10 +162,8 @@ public class OnBoardingScreen extends AppCompatActivity {
 
                     case 3:
                         /*animate the text*/
-                        setTextView(position);
-                        setTvSplashTextDesapiarAnimator();
-                        findViewById(R.id.skipBtn).setVisibility(View.GONE);
-                        buttonLayout.setVisibility(View.VISIBLE);
+                        lastState(position);
+
                         break;
                 }
 
@@ -175,6 +174,13 @@ public class OnBoardingScreen extends AppCompatActivity {
             }
         });
 
+    }
+
+    private void lastState(int position) {
+        setTextView(position);
+        setTvSplashTextDesapiarAnimator();
+        findViewById(R.id.skipBtn).setVisibility(View.GONE);
+        buttonLayout.setVisibility(View.VISIBLE);
     }
 
     private void setTextView(int position) {

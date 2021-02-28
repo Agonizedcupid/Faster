@@ -39,6 +39,8 @@ public class SplashActivity extends AppCompatActivity {
             @Override
             public void run() {
 
+                //Toast.makeText(SplashActivity.this, ""+sharedPreferences.getBoolean(Common.onBoardingCompletedStatus, false), Toast.LENGTH_SHORT).show();
+
                 //Checking whether OnBoarding scree already shown to the user or not:
                 // if, true then already shown to the user
                 //if, false then not shown yet to the user

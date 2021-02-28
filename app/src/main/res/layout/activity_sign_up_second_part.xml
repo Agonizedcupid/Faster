@@ -197,7 +197,7 @@
                     android:layout_below="@id/title"
                     android:layout_marginStart="25dp"
                     android:layout_marginTop="3dp"
-                    android:text="Business Industry"
+                    android:text="A"
                     android:textColor="@android:color/white"
                     android:textSize="18sp" />
 

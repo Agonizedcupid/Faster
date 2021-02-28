@@ -26,8 +26,6 @@
                 android:layout_marginEnd="70dp">
 
 
-
-
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="50dp"
@@ -144,191 +142,361 @@
 
     </LinearLayout>
 
-    <ScrollView
+
+    <RelativeLayout
         android:layout_width="match_parent"
         android:layout_below="@id/toolbarCard"
         android:layout_height="wrap_content">
-        <RelativeLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
 
-            <RelativeLayout
-                android:id="@+id/globeLayout"
+        <RelativeLayout
+            android:id="@+id/globeLayout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <fragment
+                android:id="@+id/map"
+                android:name="com.google.android.gms.maps.SupportMapFragment"
                 android:layout_width="match_parent"
-                android:layout_height="500dp"
-                android:layout_marginStart="-50dp"
-                android:layout_marginTop="50dp"
-                android:layout_marginEnd="-50dp"
-                android:background="@drawable/big_circle"
+                android:layout_height="match_parent"
+                />
+
+
+            <!--Left side menu-->
+            <LinearLayout
+                android:id="@+id/mainMenuList"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginStart="15dp"
                 android:orientation="vertical">
 
-                <ImageView
-                    android:id="@+id/globe"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_centerInParent="true"
-                    android:layout_margin="70dp"
-                    android:src="@drawable/globe" />
-
-
-                <!--Left side menu-->
                 <LinearLayout
-                    android:id="@+id/mainMenuList"
+                    android:id="@+id/shopMainMenu"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_centerVertical="true"
-                    android:layout_marginStart="75dp"
-                    android:orientation="vertical">
-
-                    <LinearLayout
-                        android:id="@+id/shopMainMenu"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="center"
-                        android:gravity="center"
-                        android:orientation="horizontal">
-
-                        <ImageView
-                            android:layout_width="48dp"
-                            android:layout_height="48dp"
-                            android:layout_gravity="center"
-                            android:scaleType="centerCrop"
-                            android:src="@drawable/shop_icon" />
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="Shops"
-                            android:textColor="@android:color/white"
-                            android:textSize="18sp"
-                            android:textStyle="bold" />
-
-
-                    </LinearLayout>
-
-                    <LinearLayout
-                        android:id="@+id/driverMainMenu"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="center"
-                        android:layout_marginTop="20dp"
-                        android:gravity="center"
-                        android:orientation="horizontal">
-
-                        <ImageView
-                            android:layout_width="48dp"
-                            android:layout_height="48dp"
-                            android:layout_gravity="center"
-                            android:scaleType="centerCrop"
-                            android:src="@drawable/ride_icon" />
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="Drivers"
-                            android:textColor="@android:color/white"
-                            android:textSize="18sp"
-                            android:textStyle="bold" />
-
-
-                    </LinearLayout>
-
-                    <LinearLayout
-                        android:id="@+id/onlineMainMenu"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="center"
-                        android:layout_marginTop="20dp"
-                        android:gravity="center"
-                        android:orientation="horizontal">
-
-                        <ImageView
-                            android:layout_width="48dp"
-                            android:layout_height="48dp"
-                            android:layout_gravity="center"
-                            android:scaleType="centerCrop"
-                            android:src="@drawable/wifi_icon" />
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="Online"
-                            android:textColor="@android:color/white"
-                            android:textSize="18sp"
-                            android:textStyle="bold" />
-
-
-                    </LinearLayout>
-
-                </LinearLayout>
-                <!--Left side menu end-->
-
-                <!--Left side Active menu-->
-                <LinearLayout
-                    android:id="@+id/selectedMainMenuLayout"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_centerVertical="true"
-                    android:layout_marginStart="75dp"
+                    android:layout_gravity="center"
                     android:gravity="center"
-                    android:orientation="vertical"
-                    android:visibility="gone">
-
-                    <RelativeLayout
-                        android:layout_width="60dp"
-                        android:layout_height="60dp"
-                        android:layout_gravity="center"
-                        android:gravity="center">
-
-                        <ImageView
-                            android:layout_width="45dp"
-                            android:layout_height="45dp"
-                            android:layout_centerInParent="true"
-                            android:src="@drawable/circle_with_green_color" />
-
-                        <ImageView
-                            android:id="@+id/selectedMainMenuIcon"
-                            android:layout_width="40dp"
-                            android:layout_height="40dp"
-                            android:layout_centerInParent="true"
-                            android:src="@drawable/shop_icon" />
-
-                        <ImageView
-                            android:id="@+id/closeSelectedMainMenu"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_alignParentEnd="true"
-                            android:layout_alignParentBottom="true"
-                            android:layout_marginEnd="5dp"
-                            android:layout_marginBottom="5dp"
-                            android:src="@drawable/close_icon" />
-
-
-                    </RelativeLayout>
+                    android:orientation="horizontal">
 
                     <ImageView
-                        android:id="@+id/expandMainMenu"
-                        android:layout_width="25dp"
-                        android:layout_height="25dp"
-                        android:layout_marginStart="-3dp"
-                        android:src="@drawable/below_arrow_icon" />
+                        android:layout_width="48dp"
+                        android:layout_height="48dp"
+                        android:layout_gravity="center"
+                        android:scaleType="centerCrop"
+                        android:src="@drawable/shop_icon" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Shops"
+                        android:textColor="@android:color/white"
+                        android:textSize="18sp"
+                        android:textStyle="bold" />
+
+
                 </LinearLayout>
-                <!--Left side Active menu End-->
 
-            </RelativeLayout>
+                <LinearLayout
+                    android:id="@+id/driverMainMenu"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="20dp"
+                    android:gravity="center"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:layout_width="48dp"
+                        android:layout_height="48dp"
+                        android:layout_gravity="center"
+                        android:scaleType="centerCrop"
+                        android:src="@drawable/ride_icon" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Drivers"
+                        android:textColor="@android:color/white"
+                        android:textSize="18sp"
+                        android:textStyle="bold" />
 
 
-            <ImageView
-                android:layout_width="48dp"
-                android:layout_height="48dp"
-                android:layout_below="@id/globeLayout"
-                android:layout_centerInParent="true"
-                android:layout_marginTop="75dp"
-                android:layout_marginBottom="75dp"
-                android:src="@drawable/d_icon" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/onlineMainMenu"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="20dp"
+                    android:gravity="center"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:layout_width="48dp"
+                        android:layout_height="48dp"
+                        android:layout_gravity="center"
+                        android:scaleType="centerCrop"
+                        android:src="@drawable/wifi_icon" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Online"
+                        android:textColor="@android:color/white"
+                        android:textSize="18sp"
+                        android:textStyle="bold" />
+
+
+                </LinearLayout>
+
+            </LinearLayout>
+            <!--Left side menu end-->
+
+            <!--Left side Active menu-->
+            <LinearLayout
+                android:id="@+id/selectedMainMenuLayout"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginStart="15dp"
+                android:gravity="center"
+                android:orientation="vertical"
+                android:visibility="gone">
+
+                <RelativeLayout
+                    android:layout_width="60dp"
+                    android:layout_height="60dp"
+                    android:layout_gravity="center"
+                    android:gravity="center">
+
+                    <ImageView
+                        android:layout_width="45dp"
+                        android:layout_height="45dp"
+                        android:layout_centerInParent="true"
+                        android:src="@drawable/circle_with_green_color" />
+
+                    <ImageView
+                        android:id="@+id/selectedMainMenuIcon"
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:layout_centerInParent="true"
+                        android:src="@drawable/shop_icon" />
+
+                    <ImageView
+                        android:id="@+id/closeSelectedMainMenu"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true"
+                        android:layout_alignParentBottom="true"
+                        android:layout_marginEnd="5dp"
+                        android:layout_marginBottom="5dp"
+                        android:src="@drawable/close_icon" />
+
+
+                </RelativeLayout>
+
+                <ImageView
+                    android:id="@+id/expandMainMenu"
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:layout_marginStart="-3dp"
+                    android:src="@drawable/below_arrow_icon" />
+            </LinearLayout>
+            <!--Left side Active menu End-->
 
         </RelativeLayout>
-    </ScrollView>
+
+    </RelativeLayout>
+
+
+    <!--Globe problem-->
+    <!--    <ScrollView-->
+    <!--        android:layout_width="match_parent"-->
+    <!--        android:layout_below="@id/toolbarCard"-->
+    <!--        android:layout_height="wrap_content">-->
+    <!--        <RelativeLayout-->
+    <!--            android:layout_width="match_parent"-->
+    <!--            android:layout_height="wrap_content">-->
+
+    <!--            <RelativeLayout-->
+    <!--                android:id="@+id/globeLayout"-->
+    <!--                android:layout_width="match_parent"-->
+    <!--                android:layout_height="500dp"-->
+    <!--                android:layout_marginStart="-50dp"-->
+    <!--                android:layout_marginTop="50dp"-->
+    <!--                android:layout_marginEnd="-50dp"-->
+    <!--                android:background="@drawable/big_circle"-->
+    <!--                android:orientation="vertical">-->
+
+    <!--                <ImageView-->
+    <!--                    android:id="@+id/globe"-->
+    <!--                    android:layout_width="wrap_content"-->
+    <!--                    android:layout_height="wrap_content"-->
+    <!--                    android:layout_centerInParent="true"-->
+    <!--                    android:layout_margin="70dp"-->
+    <!--                    android:src="@drawable/globe" />-->
+
+
+    <!--                &lt;!&ndash;Left side menu&ndash;&gt;-->
+    <!--                <LinearLayout-->
+    <!--                    android:id="@+id/mainMenuList"-->
+    <!--                    android:layout_width="wrap_content"-->
+    <!--                    android:layout_height="wrap_content"-->
+    <!--                    android:layout_centerVertical="true"-->
+    <!--                    android:layout_marginStart="75dp"-->
+    <!--                    android:orientation="vertical">-->
+
+    <!--                    <LinearLayout-->
+    <!--                        android:id="@+id/shopMainMenu"-->
+    <!--                        android:layout_width="wrap_content"-->
+    <!--                        android:layout_height="wrap_content"-->
+    <!--                        android:layout_gravity="center"-->
+    <!--                        android:gravity="center"-->
+    <!--                        android:orientation="horizontal">-->
+
+    <!--                        <ImageView-->
+    <!--                            android:layout_width="48dp"-->
+    <!--                            android:layout_height="48dp"-->
+    <!--                            android:layout_gravity="center"-->
+    <!--                            android:scaleType="centerCrop"-->
+    <!--                            android:src="@drawable/shop_icon" />-->
+
+    <!--                        <TextView-->
+    <!--                            android:layout_width="wrap_content"-->
+    <!--                            android:layout_height="wrap_content"-->
+    <!--                            android:text="Shops"-->
+    <!--                            android:textColor="@android:color/white"-->
+    <!--                            android:textSize="18sp"-->
+    <!--                            android:textStyle="bold" />-->
+
+
+    <!--                    </LinearLayout>-->
+
+    <!--                    <LinearLayout-->
+    <!--                        android:id="@+id/driverMainMenu"-->
+    <!--                        android:layout_width="wrap_content"-->
+    <!--                        android:layout_height="wrap_content"-->
+    <!--                        android:layout_gravity="center"-->
+    <!--                        android:layout_marginTop="20dp"-->
+    <!--                        android:gravity="center"-->
+    <!--                        android:orientation="horizontal">-->
+
+    <!--                        <ImageView-->
+    <!--                            android:layout_width="48dp"-->
+    <!--                            android:layout_height="48dp"-->
+    <!--                            android:layout_gravity="center"-->
+    <!--                            android:scaleType="centerCrop"-->
+    <!--                            android:src="@drawable/ride_icon" />-->
+
+    <!--                        <TextView-->
+    <!--                            android:layout_width="wrap_content"-->
+    <!--                            android:layout_height="wrap_content"-->
+    <!--                            android:text="Drivers"-->
+    <!--                            android:textColor="@android:color/white"-->
+    <!--                            android:textSize="18sp"-->
+    <!--                            android:textStyle="bold" />-->
+
+
+    <!--                    </LinearLayout>-->
+
+    <!--                    <LinearLayout-->
+    <!--                        android:id="@+id/onlineMainMenu"-->
+    <!--                        android:layout_width="wrap_content"-->
+    <!--                        android:layout_height="wrap_content"-->
+    <!--                        android:layout_gravity="center"-->
+    <!--                        android:layout_marginTop="20dp"-->
+    <!--                        android:gravity="center"-->
+    <!--                        android:orientation="horizontal">-->
+
+    <!--                        <ImageView-->
+    <!--                            android:layout_width="48dp"-->
+    <!--                            android:layout_height="48dp"-->
+    <!--                            android:layout_gravity="center"-->
+    <!--                            android:scaleType="centerCrop"-->
+    <!--                            android:src="@drawable/wifi_icon" />-->
+
+    <!--                        <TextView-->
+    <!--                            android:layout_width="wrap_content"-->
+    <!--                            android:layout_height="wrap_content"-->
+    <!--                            android:text="Online"-->
+    <!--                            android:textColor="@android:color/white"-->
+    <!--                            android:textSize="18sp"-->
+    <!--                            android:textStyle="bold" />-->
+
+
+    <!--                    </LinearLayout>-->
+
+    <!--                </LinearLayout>-->
+    <!--                &lt;!&ndash;Left side menu end&ndash;&gt;-->
+
+    <!--                &lt;!&ndash;Left side Active menu&ndash;&gt;-->
+    <!--                <LinearLayout-->
+    <!--                    android:id="@+id/selectedMainMenuLayout"-->
+    <!--                    android:layout_width="wrap_content"-->
+    <!--                    android:layout_height="wrap_content"-->
+    <!--                    android:layout_centerVertical="true"-->
+    <!--                    android:layout_marginStart="75dp"-->
+    <!--                    android:gravity="center"-->
+    <!--                    android:orientation="vertical"-->
+    <!--                    android:visibility="gone">-->
+
+    <!--                    <RelativeLayout-->
+    <!--                        android:layout_width="60dp"-->
+    <!--                        android:layout_height="60dp"-->
+    <!--                        android:layout_gravity="center"-->
+    <!--                        android:gravity="center">-->
+
+    <!--                        <ImageView-->
+    <!--                            android:layout_width="45dp"-->
+    <!--                            android:layout_height="45dp"-->
+    <!--                            android:layout_centerInParent="true"-->
+    <!--                            android:src="@drawable/circle_with_green_color" />-->
+
+    <!--                        <ImageView-->
+    <!--                            android:id="@+id/selectedMainMenuIcon"-->
+    <!--                            android:layout_width="40dp"-->
+    <!--                            android:layout_height="40dp"-->
+    <!--                            android:layout_centerInParent="true"-->
+    <!--                            android:src="@drawable/shop_icon" />-->
+
+    <!--                        <ImageView-->
+    <!--                            android:id="@+id/closeSelectedMainMenu"-->
+    <!--                            android:layout_width="wrap_content"-->
+    <!--                            android:layout_height="wrap_content"-->
+    <!--                            android:layout_alignParentEnd="true"-->
+    <!--                            android:layout_alignParentBottom="true"-->
+    <!--                            android:layout_marginEnd="5dp"-->
+    <!--                            android:layout_marginBottom="5dp"-->
+    <!--                            android:src="@drawable/close_icon" />-->
+
+
+    <!--                    </RelativeLayout>-->
+
+    <!--                    <ImageView-->
+    <!--                        android:id="@+id/expandMainMenu"-->
+    <!--                        android:layout_width="25dp"-->
+    <!--                        android:layout_height="25dp"-->
+    <!--                        android:layout_marginStart="-3dp"-->
+    <!--                        android:src="@drawable/below_arrow_icon" />-->
+    <!--                </LinearLayout>-->
+    <!--                &lt;!&ndash;Left side Active menu End&ndash;&gt;-->
+
+    <!--            </RelativeLayout>-->
+
+
+    <!--            <ImageView-->
+    <!--                android:layout_width="48dp"-->
+    <!--                android:layout_height="48dp"-->
+    <!--                android:layout_below="@id/globeLayout"-->
+    <!--                android:layout_centerInParent="true"-->
+    <!--                android:layout_marginTop="75dp"-->
+    <!--                android:layout_marginBottom="75dp"-->
+    <!--                android:src="@drawable/d_icon" />-->
+
+    <!--        </RelativeLayout>-->
+    <!--    </ScrollView>-->
 
     <!--Mode Menu Start-->
     <LinearLayout
@@ -339,8 +507,7 @@
         android:layout_marginTop="10dp"
         android:layout_marginEnd="20dp"
         android:orientation="vertical"
-        android:visibility="gone"
-        >
+        android:visibility="gone">
 
 
         <!--First Menu-->

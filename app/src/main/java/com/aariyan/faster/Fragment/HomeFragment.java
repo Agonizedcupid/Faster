@@ -12,14 +12,22 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.aariyan.faster.Common.Common;
 import com.aariyan.faster.R;
+import com.google.android.gms.maps.CameraUpdateFactory;
+import com.google.android.gms.maps.GoogleMap;
+import com.google.android.gms.maps.OnMapReadyCallback;
+import com.google.android.gms.maps.SupportMapFragment;
+import com.google.android.gms.maps.model.CameraPosition;
+import com.google.android.gms.maps.model.LatLng;
+import com.google.android.gms.maps.model.MarkerOptions;
 
 import static com.aariyan.faster.Common.Common.sharedPreferences;
 
 
-public class HomeFragment extends Fragment {
+public class HomeFragment extends Fragment implements OnMapReadyCallback{
     //list of main menu container:
     private LinearLayout onlineMainMenu, shopMainMenu, driverMainMenu;
 
@@ -57,10 +65,10 @@ public class HomeFragment extends Fragment {
     private ImageView closeSelectedMenu;
 
 
-
     // to identify the users selection menu name:
     private String menuIdentifier = "";
 
+    private GoogleMap mMap;
 
 
     public HomeFragment() {
@@ -78,14 +86,24 @@ public class HomeFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        root =  inflater.inflate(R.layout.fragment_home, container, false);
+        root = inflater.inflate(R.layout.fragment_home, container, false);
+
+        if (getActivity() != null) {
+            SupportMapFragment mapFragment =
+                    //(SupportMapFragment) getActivity().getSupportFragmentManager()
+                    (SupportMapFragment)getChildFragmentManager()
+                    .findFragmentById(R.id.map);
+
+            if (mapFragment != null) {
+                mapFragment.getMapAsync(this);
+            }
+        }
 
         //instantiate the UI:
         initUI();
 
         return root;
     }
-
 
 
     private void initUI() {
@@ -309,5 +327,19 @@ public class HomeFragment extends Fragment {
         if (mainMenuIdentifier.equals("Online")) {
             selectedMainMenuIcon.setImageResource(R.drawable.wifi_icon);
         }
+    }
+
+    @Override
+    public void onMapReady(GoogleMap googleMap) {
+        mMap = googleMap;
+        // Add a marker in Sydney and move the camera
+        LatLng sydney = new LatLng(-34, 151);
+        mMap.addMarker(new MarkerOptions().position(sydney).title("Marker in Sydney"));
+        //mMap.moveCamera(CameraUpdateFactory.newLatLng(sydney));
+        mMap.moveCamera(CameraUpdateFactory.newCameraPosition(new CameraPosition.Builder().target(new LatLng(-34, 151))
+                .zoom(-0f)
+                .bearing(0)
+                .tilt(25)
+                .build()));
     }
 }
